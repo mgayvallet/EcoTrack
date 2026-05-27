@@ -9,5 +9,8 @@ require SRC . 'helper.php';
 $router = new MVC\Router($_SERVER["REQUEST_URI"]);
 $router->get('/', "HomeController@index");
 
+//auth
+$router->get('/login', "HomeController@login");
+$router->get('/register', "HomeController@register");
 
 $router->run();
