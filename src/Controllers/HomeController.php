@@ -13,4 +13,16 @@ class HomeController
         $title = 'EcoTrack - Accueil';
         require VIEWS . 'layout/layout.php';
     }
+
+    public function login()
+    {
+        $title = 'EcoTrack - Login';
+        require VIEWS . 'Auth/login.php';
+    }
+
+    public function register()
+    {
+        $title = 'EcoTrack - Register';
+        require VIEWS . 'Auth/register.php';
+    }
 }
