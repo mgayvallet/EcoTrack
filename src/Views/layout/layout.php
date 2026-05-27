@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,40 +8,40 @@
   <link rel="stylesheet" href="/style/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-<div class="layout">
+  <div class="layout">
 
-  <header class="site-header">
-    <a href="/" class="logo">
-      <div class="logo-icon">
-      </div>
-      <span class="logo-text">EcoTrack</span>
-    </a>
+    <header class="site-header">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+        </div>
+        <span class="logo-text">EcoTrack</span>
+      </a>
 
-    <nav class="site-nav">
-      <a href="/calculateur">Calculateur</a>
-      <a href="/defis">Défis</a>
-      <a href="/articles">Articles</a>
-      <a href="/connexion" class="btn-connexion">Connexion</a>
-    </nav>
-  </header>
+      <nav class="site-nav">
+        <a href="/calculateur">Calculateur</a>
+        <a href="/defis">Défis</a>
+        <a href="/articles">Articles</a>
+        <a href="/connexion" class="btn-connexion">Connexion</a>
+      </nav>
+    </header>
 
-  <main class="site-main">
-    <?= $content ?? '' ?>
-  </main>
+    <main class="site-main">
+      <?= $content ?? '' ?>
+    </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="/" class="footer-logo">
-          <div class="logo-icon">
-          </div>
-          <span class="footer-logo-text">EcoTrack</span>
-        </a>
-        <p class="footer-tagline">Votre compagnon pour un mode de vie plus durable. Mesurez, apprenez et réduisez votre empreinte carbone au quotidien.</p>
-      </div>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            <div class="logo-icon">
+            </div>
+            <span class="footer-logo-text">EcoTrack</span>
+          </a>
+          <p class="footer-tagline">Votre compagnon pour un mode de vie plus durable. Mesurez, apprenez et réduisez votre empreinte carbone au quotidien.</p>
+        </div>
 
-      <div class="footer-cols">
         <div class="footer-col">
           <h4>Fonctionnalités</h4>
           <ul>
@@ -55,10 +56,9 @@
             <li><a href="/contact">Nous contacter</a></li>
           </ul>
         </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-</div>
+  </div>
 </body>
+
 </html>
