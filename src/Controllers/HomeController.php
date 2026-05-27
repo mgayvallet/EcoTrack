@@ -2,24 +2,15 @@
 
 namespace MVC\Controllers;
 
-use MVC\Models\UserManager;
-
 class HomeController
 {
-    private UserManager $user_manager;
-
-    public function __construct()
+    public function index(): void
     {
-        $this->user_manager = new UserManager();
-    }
-
-    public function login(): void
-    {
-        require VIEWS . 'Auth/login.php';
-    }
-
-    public function register(): void
-    {
-        require VIEWS . 'Auth/register.php';
+        ob_start();
+        require VIEWS . 'App/homepage.php';
+        $content = ob_get_clean();
+        
+        $title = 'EcoTrack - Accueil';
+        require VIEWS . 'layout/layout.php';
     }
 }
