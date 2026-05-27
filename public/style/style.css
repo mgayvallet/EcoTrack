@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 *,
 *::before,
 *::after {
@@ -12,7 +13,7 @@
 	--bg: #f7f9f4;
 	--text-dark: #1a1a1a;
 	--text-muted: #666;
-	--font: "Sora", sans-serif;
+	--font: "Inter", sans-serif;
 }
 
 html,
@@ -230,12 +231,12 @@ footer {
 	font-size: 20px;
 	color: var(--text-muted);
 	line-height: 1.7;
-	width: 60%;
+	width: 55%;
 	margin-top: 16px;
 }
 
 .footer-col {
-  width: 100%;
+	width: 100%;
 }
 
 .footer-col h4 {

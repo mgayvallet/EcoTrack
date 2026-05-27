@@ -9,8 +9,18 @@ class HomeController
         ob_start();
         require VIEWS . 'App/homepage.php';
         $content = ob_get_clean();
-        
+
         $title = 'EcoTrack - Accueil';
+        require VIEWS . 'layout/layout.php';
+    }
+
+    public function showCalculatorPage()
+    {
+        ob_start();
+        require VIEWS . 'App/calculator.php';
+        $content = ob_get_clean();
+
+        $title = 'EcoTrack - Calculateur';
         require VIEWS . 'layout/layout.php';
     }
 }
