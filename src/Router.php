@@ -1,9 +1,6 @@
 <?php
 namespace MVC;
 
-//use App\Controllers\UserController;
-/** Class Router **/
-
 class Router {
 
     private $url;
@@ -34,7 +31,6 @@ class Router {
                 return $route->call();
             }
         }
-        // throw new \Exception('No matching routes');
         require VIEWS . '404.php';
     }
 
