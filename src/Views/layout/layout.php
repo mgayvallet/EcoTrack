@@ -15,6 +15,7 @@
     <header class="site-header">
       <a href="/" class="logo">
         <div class="logo-icon">
+          <img src="../assets/icons/logo.svg" alt="">
         </div>
         <span class="logo-text">EcoTrack</span>
       </a>
@@ -23,7 +24,7 @@
         <a href="/calculateur">Calculateur</a>
         <a href="/defis">Défis</a>
         <a href="/articles">Articles</a>
-        <a href="/connexion" class="btn-connexion">Connexion</a>
+        <a href="/login" class="btn-connexion">Connexion</a>
       </nav>
     </header>
 
@@ -36,6 +37,7 @@
         <div class="footer-brand">
           <a href="/" class="footer-logo">
             <div class="logo-icon">
+              <img src="../assets/icons/logo.svg" alt="">
             </div>
             <span class="footer-logo-text">EcoTrack</span>
           </a>
