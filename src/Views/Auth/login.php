@@ -1,28 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/auth.css">
+  <title>EcoTrack Connexion</title>
 </head>
 <body>
-    <main>
-        <h1>Bienvenue sur EcoTrack</h1>
+  <div class="container">
+    <h1>Bienvenue sur EcoTrack</h1>
+    <p class="subtitle">Connectez-vous pour continuer votre parcours écologique</p>
 
-        <p>Connectez-vous pour continuer votre parcours écologique</p>
+    <div class="card">
+      <div class="field">
+        <label for="email">Adresse email</label>
+        <div class="input-wrap">
+          <img class="icon" src="assets/icons/email.svg" alt="">
+          <input type="email" id="email" placeholder="exemple@gmail.com">
+        </div>
+      </div>
 
-        <form action="">
-            <label for="email">Adresse email</label>
-            <input type="email" name="email">
+      <div class="field">
+        <div class="label-row">
+          <label for="password">Mot de passe</label>
+          <a href="#" class="forgot">Mot de passe oublié ?</a>
+        </div>
+        <div class="input-wrap">
+          <img class="icon" src="assets/icons/password.svg" alt="">
+          <input type="password" id="password" placeholder="••••••••">
+        </div>
+      </div>
 
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password">
+      <div class="remember">
+        <input type="checkbox" id="remember">
+        <span>Se souvenir de moi</span>
+      </div>
 
-            <button type="submit">Se connecter</button>
-        </form>
+      <button type="button">Se connecter</button>
+    </div>
 
-        <p>Pas encore de compte ?</p> <a href="/register">Crée un compte</a>
-        <a href="/home">Retour à l'accueil</a>
-    </main>
+    <div class="footer">
+      <p>Pas encore de compte ? <a href="/register">Crée un compte</a></p>
+      <p><a href="/">Retour à l'accueil</a></p>
+    </div>
+  </div>
 </body>
 </html>
