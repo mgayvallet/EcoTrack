@@ -11,6 +11,18 @@ CREATE TABLE IF NOT EXISTS users (
     UNIQUE KEY uq_users_email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS empreintes (
+    id                         INT PRIMARY KEY AUTO_INCREMENT,
+    user_id                    INT NOT NULL,
+    empreinte_carbone          INT NOT NULL,
+    empreinte_transport        INT NOT NULL,
+    empreinte_logement         INT NOT NULL,
+    empreinte_alimentation     INT NOT NULL,
+    empreinte_achat_numerique  INT NOT NULL,
+    created_at                 TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS questions (
     id             INT PRIMARY KEY AUTO_INCREMENT,
     categorie      ENUM('transport','logement','alimentation','achats_numerique') NOT NULL,

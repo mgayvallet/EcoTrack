@@ -4,6 +4,7 @@ namespace MVC\Controllers;
 
 use MVC\Models\QuestionManager;
 use MVC\Models\CarbonCalculator;
+use MVC\Models\EmpreinteManager;
 
 class HomeController
 {
@@ -44,6 +45,11 @@ class HomeController
     {
         $calculator = new CarbonCalculator();
         $result = $calculator->calculate($_POST);
+
+        if (isset($_SESSION['user_id'])) {
+            $empreinteManager = new EmpreinteManager();
+            $empreinteManager->save($_SESSION['user_id'], $result);
+        }
 
         ob_start();
         require VIEWS . 'App/result.php';
