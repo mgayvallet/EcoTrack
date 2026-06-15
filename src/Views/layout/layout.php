@@ -17,13 +17,13 @@
       <span class="logo-text">EcoTrack</span>
     </a>
 
-    <nav class="site-nav">
-      <a href="/calculateur">Calculateur</a>
-      <a href="/defis">Défis</a>
-      <a href="/articles">Articles</a>
-      <a href="/connexion" class="btn-connexion">Connexion</a>
-    </nav>
-  </header>
+      <nav class="site-nav">
+        <a href="/calculateur">Calculateur</a>
+        <a href="/defis">Défis</a>
+        <a href="/articles">Articles</a>
+        <a href="/login" class="btn-connexion">Connexion</a>
+      </nav>
+    </header>
 
   <main class="site-main">
     <?= $content ?? '' ?>
