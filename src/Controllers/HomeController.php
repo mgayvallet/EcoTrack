@@ -37,6 +37,7 @@ class HomeController
         $content = ob_get_clean();
 
         $title = 'EcoTrack - Défis';
+        require VIEWS . 'layout/layout.php';
     }
 
     public function calculate()
