@@ -43,7 +43,7 @@
       </label>
     </div>
   </form>
-  <a href="/calculator2">
+  <a class="link-calculator" id="link-next">
     Suivant
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
