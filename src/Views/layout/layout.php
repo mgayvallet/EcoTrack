@@ -47,7 +47,7 @@
                 <div class="footer-col">
                     <h4>Fonctionnalités</h4>
                     <ul>
-                        <li><a href="/calculateur">Calculateur</a></li>
+                        <li><a href="/calculator">Calculateur</a></li>
                         <li><a href="/defis">Défis</a></li>
                         <li><a href="/articles">Articles</a></li>
                     </ul>
