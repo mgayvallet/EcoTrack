@@ -75,7 +75,7 @@
                 </div>
                 <div class="para-card">
                     <h4>Mangez moins de viandes</h4>
-                    <p>Mangez de la viande au moinss une fois par semaine</p>
+                    <p>Mangez de la viande au moins une fois par semaine</p>
                 </div>
                 <div class="mid-card">
                     <p>15 kg de CO2</p>
