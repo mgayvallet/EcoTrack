@@ -24,7 +24,12 @@
         <a href="/calculateur">Calculateur</a>
         <a href="/defis">Défis</a>
         <a href="/articles">Articles</a>
-        <a href="/login" class="btn-connexion">Connexion</a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+          <span class="user-name"><?= htmlspecialchars($_SESSION['user_name'] ?? '') ?></span>
+          <a href="/logout" class="btn-connexion btn-logout">Déconnexion</a>
+        <?php else: ?>
+          <a href="/login" class="btn-connexion">Connexion</a>
+        <?php endif; ?>
       </nav>
     </header>
 

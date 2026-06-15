@@ -107,6 +107,21 @@ nav {
 	background-color: #007040;
 }
 
+.user-name {
+	color: var(--text-dark);
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.site-nav .btn-connexion.btn-logout {
+	background-color: #e53935;
+}
+
+.site-nav .btn-connexion.btn-logout:hover {
+	background-color: #b71c1c;
+	color: white;
+}
+
 main {
 	flex: 1;
 	display: flex;

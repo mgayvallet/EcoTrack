@@ -28,6 +28,10 @@ class Router {
         }
         foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route){
             if($route->match($this->url)){
+                if($route->isProtected() && !isset($_SESSION['user_id'])){
+                    header('Location: /login');
+                    exit;
+                }
                 return $route->call();
             }
         }

@@ -1,6 +1,16 @@
 CREATE DATABASE IF NOT EXISTS EcoTrack;
 USE EcoTrack;
 
+CREATE TABLE IF NOT EXISTS users (
+    id          INT PRIMARY KEY AUTO_INCREMENT,
+    name        VARCHAR(255) NOT NULL,
+    email       VARCHAR(255) NOT NULL,
+    password    VARCHAR(255) NOT NULL,
+    created_at  TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY uq_users_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS questions (
     id             INT PRIMARY KEY AUTO_INCREMENT,
     categorie      ENUM('transport','logement','alimentation','achats_numerique') NOT NULL,
@@ -27,7 +37,7 @@ CREATE TABLE IF NOT EXISTS question_options (
     UNIQUE KEY uq_option (question_id, valeur)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO questions
+INSERT IGNORE INTO questions
     (id, categorie, code, libelle, aide, type, valeur_min, valeur_max, valeur_defaut, pas, unite, ordre) VALUES
     ( 1, 'transport',        'km_voiture_par_an',              'Combien de km faites-vous en voiture par an ?',                          NULL,                            'slider',    0, 40000, 12000, 100, 'km',       1),
     ( 2, 'transport',        'type_vehicule',                  'Quel type de vehicule conduisez-vous ?',                                 NULL,                            'choix',  NULL,  NULL,  NULL, NULL, NULL,       2),
@@ -43,7 +53,7 @@ INSERT INTO questions
     (12, 'achats_numerique', 'appareils_electroniques_par_an', 'Combien d''appareils electroniques neufs achetez-vous par an ?',         'Telephone, ordi, TV...',        'slider',    0,    10,     0,   1, 'appareils',12),
     (13, 'achats_numerique', 'heures_streaming_par_jour',      'Combien d''heures par jour passez-vous sur du streaming ou internet ?',  NULL,                            'slider',    0,    12,     0, 0.5, 'h/jour',   13);
 
-INSERT INTO question_options (question_id, valeur, libelle, ordre) VALUES
+INSERT IGNORE INTO question_options (question_id, valeur, libelle, ordre) VALUES
     (2, 'electrique',               'Electrique',                  1),
     (2, 'hybride',                  'Hybride',                     2),
     (2, 'essence_diesel_moyen',     'Essence-diesel moyen',        3),

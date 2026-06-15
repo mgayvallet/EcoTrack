@@ -8,7 +8,7 @@ require SRC . 'helper.php';
 
 $router = new MVC\Router($_SERVER["REQUEST_URI"]);
 $router->get('/', "HomeController@index");
-$router->get('/calculator', "HomeController@showCalculatorPage");
+$router->get('/calculator', "HomeController@showCalculatorPage")->auth();
 
 $router->get('/login', "UserController@loginPage");
 $router->post('/login', "UserController@login");
