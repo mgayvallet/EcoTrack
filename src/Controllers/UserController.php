@@ -3,6 +3,8 @@
 namespace MVC\Controllers;
 
 use MVC\Models\UserManager;
+use MVC\Models\User;
+use MVC\Validator;
 
 class UserController
 {
@@ -13,4 +15,109 @@ class UserController
         $this->user_manager = new UserManager();
     }
 
+    public function loginPage()
+    {
+        $title = 'Connexion';
+        require VIEWS . 'Auth/login.php';
+    }
+
+    public function login()
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            header('Location: /login');
+            exit;
+        }
+
+        $email = $_POST['email'] ?? '';
+        $password = $_POST['password'] ?? '';
+
+        $validator = new Validator($_POST);
+        $validator->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:6']
+        ]);
+
+        if (!empty($validator->errors())) {
+            $_SESSION['error'] = $validator->errors();
+            $_SESSION['old'] = $_POST;
+            header('Location: /login');
+            exit;
+        }
+
+        $result = $this->user_manager->login($email, $password);
+
+        if ($result['success']) {
+            $_SESSION['success'] = $result['message'];
+            header('Location: /');
+            exit;
+        } else {
+            $_SESSION['error']['login'] = $result['message'];
+            $_SESSION['old'] = $_POST;
+            header('Location: /login');
+            exit;
+        }
+    }
+
+    public function registerPage()
+    {
+        $title = 'Inscription';
+        require VIEWS . 'Auth/register.php';
+    }
+
+    public function register()
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            header('Location: /register');
+            exit;
+        }
+
+        $name = $_POST['name'] ?? '';
+        $email = $_POST['email'] ?? '';
+        $password = $_POST['password'] ?? '';
+        $password_confirm = $_POST['password_confirm'] ?? '';
+
+        $validator = new Validator($_POST);
+        $validator->validate([
+            'name' => ['required', 'min:3', 'max:255'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:8'],
+        ]);
+
+        if ($password !== $password_confirm) {
+            $_SESSION['error']['password_confirm'] = 'Les mots de passe ne correspondent pas';
+        }
+
+        if (!empty($validator->errors()) || isset($_SESSION['error']['password_confirm'])) {
+            $_SESSION['error'] = $_SESSION['error'] ?? [];
+            $_SESSION['old'] = $_POST;
+            unset($_SESSION['old']['password']);
+            unset($_SESSION['old']['password_confirm']);
+            header('Location: /register');
+            exit;
+        }
+
+        $user = new User($name, $email, $password);
+        $result = $this->user_manager->register($user);
+
+        if ($result['success']) {
+            $_SESSION['success'] = $result['message'];
+            header('Location: /login');
+            exit;
+        } else {
+            $_SESSION['error']['register'] = $result['message'];
+            $_SESSION['old'] = $_POST;
+            unset($_SESSION['old']['password']);
+            unset($_SESSION['old']['password_confirm']);
+            header('Location: /register');
+            exit;
+        }
+    }
+
+    public function logout()
+    {
+        UserManager::logout();
+        $_SESSION['success'] = 'Vous avez été déconnecté avec succès';
+        header('Location: /login');
+        exit;
+    }
 }
