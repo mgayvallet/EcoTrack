@@ -79,7 +79,6 @@ CREATE TABLE IF NOT EXISTS alimentation (
     UNIQUE KEY uq_alimentation_response (response_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ── Achats & numérique ────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS achats_numerique (
     id                             INT PRIMARY KEY AUTO_INCREMENT,
     response_id                    INT NOT NULL,
