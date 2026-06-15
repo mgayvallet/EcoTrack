@@ -7,10 +7,20 @@ class Route {
     private $callable;
     private $matches = [];
     private $params = [];
+    private $protected = false;
 
     public function __construct($path, $callable){
         $this->path = trim($path, '/');
         $this->callable = $callable;
+    }
+
+    public function auth(){
+        $this->protected = true;
+        return $this;
+    }
+
+    public function isProtected(){
+        return $this->protected;
     }
 
     public function match($url){
