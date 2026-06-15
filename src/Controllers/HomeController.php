@@ -24,6 +24,18 @@ class HomeController
         require VIEWS . 'layout/layout.php';
     }
 
+
+
+    public function showChallengePage()
+    {
+        ob_start();
+        require VIEWS . 'App/challenge.php';
+        $content = ob_get_clean();
+
+        $title = 'EcoTrack - Défis';
+        require VIEWS . 'layout/layout.php';
+    }
+
     public function login()
     {
         $title = 'EcoTrack - Login';

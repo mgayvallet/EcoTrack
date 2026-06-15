@@ -20,18 +20,18 @@
                 <span class="logo-text">EcoTrack</span>
             </a>
 
-      <nav class="site-nav">
-        <a href="/calculateur">Calculateur</a>
-        <a href="/defis">Défis</a>
-        <a href="/articles">Articles</a>
-        <?php if (isset($_SESSION['user_id'])): ?>
-          <span class="user-name"><?= htmlspecialchars($_SESSION['user_name'] ?? '') ?></span>
-          <a href="/logout" class="btn-connexion btn-logout">Déconnexion</a>
-        <?php else: ?>
-          <a href="/login" class="btn-connexion">Connexion</a>
-        <?php endif; ?>
-      </nav>
-    </header>
+            <nav class="site-nav">
+                <a href="/calculator">Calculateur</a>
+                <a href="/challenge">Défis</a>
+                <a href="/articles">Articles</a>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <span class="user-name"><?= htmlspecialchars($_SESSION['user_name'] ?? '') ?></span>
+                    <a href="/logout" class="btn-connexion btn-logout">Déconnexion</a>
+                <?php else: ?>
+                    <a href="/login" class="btn-connexion">Connexion</a>
+                <?php endif; ?>
+            </nav>
+        </header>
 
         <main class="site-main">
             <?= $content ?? '' ?>
@@ -53,7 +53,7 @@
                     <h4>Fonctionnalités</h4>
                     <ul>
                         <li><a href="/calculator">Calculateur</a></li>
-                        <li><a href="/defis">Défis</a></li>
+                        <li><a href="/challenge">Défis</a></li>
                         <li><a href="/articles">Articles</a></li>
                     </ul>
                 </div>
