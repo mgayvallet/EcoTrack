@@ -1,173 +1,171 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: inter;
+}
 
+body {
+	font-family: Georgia, "Times New Roman", serif;
+	background-color: #f5f4ef;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: inter;
-    }
+.container {
+	text-align: center;
+	width: 100%;
+	max-width: 480px;
+	padding: 0 20px;
+}
 
-    body {
-      font-family: Georgia, 'Times New Roman', serif;
-      background-color: #f5f4ef;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+h1 {
+	font-size: 2.2rem;
+	font-weight: bold;
+	color: #1a1a1a;
+	margin-bottom: 10px;
+}
 
-    .container {
-      text-align: center;
-      width: 100%;
-      max-width: 480px;
-      padding: 0 20px;
-    }
+.subtitle {
+	font-family: Arial, sans-serif;
+	font-size: 0.95rem;
+	color: #777;
+	margin-bottom: 36px;
+}
 
-    h1 {
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: #1a1a1a;
-      margin-bottom: 10px;
-    }
+.card {
+	background: #fff;
+	border-radius: 14px;
+	padding: 36px 32px;
+	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+	text-align: left;
+	margin-bottom: 24px;
+}
 
-    .subtitle {
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      color: #777;
-      margin-bottom: 36px;
-    }
+.field {
+	margin-bottom: 22px;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 36px 32px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-      text-align: left;
-      margin-bottom: 24px;
-    }
+label {
+	font-family: Arial, sans-serif;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #1a1a1a;
+	display: block;
+	margin-bottom: 8px;
+}
 
-    .field {
-      margin-bottom: 22px;
-    }
+.label-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 8px;
+}
 
-    label {
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #1a1a1a;
-      display: block;
-      margin-bottom: 8px;
-    }
+.label-row label {
+	margin-bottom: 0;
+}
 
-    .label-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
+.forgot {
+	font-family: Arial, sans-serif;
+	font-size: 0.85rem;
+	color: #2e8b50;
+	text-decoration: none;
+}
 
-    .label-row label {
-      margin-bottom: 0;
-    }
+.forgot:hover {
+	text-decoration: underline;
+}
 
-    .forgot {
-      font-family: Arial, sans-serif;
-      font-size: 0.85rem;
-      color: #2e8b50;
-      text-decoration: none;
-    }
+.input-wrap {
+	position: relative;
+}
 
-    .forgot:hover {
-      text-decoration: underline;
-    }
+.input-wrap .icon {
+	position: absolute;
+	left: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #aaa;
+	font-size: 1rem;
+}
 
-    .input-wrap {
-      position: relative;
-    }
+input {
+	width: 100%;
+	padding: 12px 14px 12px 40px;
+	border: 1.5px solid #ddd;
+	border-radius: 8px;
+	font-family: Arial, sans-serif;
+	font-size: 0.9rem;
+	color: #333;
+	background: #fff;
+	outline: none;
+	transition: border-color 0.2s;
+}
 
-    .input-wrap .icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #aaa;
-      font-size: 1rem;
-    }
+input[type="email"]:focus,
+input[type="password"]:focus {
+	border-color: #2e8b50;
+}
 
-    input{
-      width: 100%;
-      padding: 12px 14px 12px 40px;
-      border: 1.5px solid #ddd;
-      border-radius: 8px;
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-      color: #333;
-      background: #fff;
-      outline: none;
-      transition: border-color 0.2s;
-    }
+input::placeholder {
+	color: #bbb;
+}
 
-    input[type="email"]:focus,
-    input[type="password"]:focus {
-      border-color: #2e8b50;
-    }
+.remember {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 24px;
+}
 
-    input::placeholder {
-      color: #bbb;
-    }
+.remember input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	accent-color: #2e8b50;
+	cursor: pointer;
+}
 
-    .remember {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
+.remember span {
+	font-family: Arial, sans-serif;
+	font-size: 0.88rem;
+	color: #444;
+}
 
-    .remember input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      accent-color: #2e8b50;
-      cursor: pointer;
-    }
+button {
+	width: 100%;
+	padding: 14px;
+	background-color: #2e8b50;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	font-family: Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
 
-    .remember span {
-      font-family: Arial, sans-serif;
-      font-size: 0.88rem;
-      color: #444;
-    }
+button:hover {
+	background-color: #256e40;
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      background-color: #2e8b50;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-family: Arial, sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
+.footer {
+	font-family: Arial, sans-serif;
+	font-size: 0.88rem;
+	color: #888;
+	line-height: 1.8;
+}
 
-    button:hover {
-      background-color: #256e40;
-    }
+.footer a {
+	color: #2e8b50;
+	text-decoration: none;
+}
 
-    .footer {
-      font-family: Arial, sans-serif;
-      font-size: 0.88rem;
-      color: #888;
-      line-height: 1.8;
-    }
-
-    .footer a {
-      color: #2e8b50;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
+.footer a:hover {
+	text-decoration: underline;
+}

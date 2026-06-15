@@ -2,6 +2,8 @@
 
 namespace MVC\Models;
 
+use MVC\Models\User;
+
 class UserManager
 {
     private $bdd;
