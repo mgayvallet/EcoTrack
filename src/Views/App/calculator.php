@@ -7,7 +7,7 @@
   <div class="step-div">
     <hgroup>
       <h2>Calculateur d'empreinte carbone</h2>
-      <p>Etape <span>1</span> sur 3</p>
+      <p>Etape <span id="steps-span">1</span> sur 3</p>
     </hgroup>
     <div class="progress-container">
       <div class="progress-bar"></div>
@@ -43,10 +43,28 @@
       </label>
     </div>
   </form>
-  <a href="/calculator2" class="link-calculator">
+  <a class="link-calculator" id="link-next">
     Suivant
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </a>
 </section>
+<script>
+  const ELEMENTS = {
+    stepsSpan: document.getElementById("steps-span"),
+    progressBar: document.querySelector(".progress-bar"),
+    linkNext: document.getElementById("link-next"),
+    sectCalculator: document.querySelector("section"),
+  };
+  const steps = [1, 2, 3, 4];
+  let isActive = true;
+
+  ELEMENTS.linkNext.addEventListener("click", () => {
+    console.log("fzeyixdt");
+  })
+
+  function changeCalculator() {
+
+  }
+</script>
