@@ -18,26 +18,32 @@
       <h3>Transport</h3>
       <p>Vos déplacements hebdomadaires</p>
     </div>
-    <label>
-      Distance en voiture par semaines (km)
-      <input type="number" name="" id="" max="1000000" min="0">
-    </label>
-    <label>
-      Type de véhicule
-      <select>
-        <option value="Essence">Essence</option>
-      </select>
-    </label>
-    <label>
-      Transports en commun par semaines (km)
-      <input type="number" name="" id="" max="1000000" min="0">
-    </label>
-    <label>
-      Vols par an
-      <input type="number" name="" id="" max="25" min="0">
-    </label>
+    <div class="label-container">
+      <label>
+        Distance en voiture par ans (km)
+        <input type="number" name="" id="" max="1000000" min="1" placeholder="1">
+      </label>
+      <label>
+        Type de véhicule
+        <select>
+          <option value="Essence">Essence</option>
+        </select>
+      </label>
+      <label>
+        Vols courts par an
+        <input type="number" name="" id="" max="25" min="1" placeholder="1">
+      </label>
+      <label>
+        Vols longs par an
+        <input type="number" name="" id="" max="25" min="1" placeholder="1">
+      </label>
+      <label>
+        Distance en train par ans (km)
+        <input type="number" name="" id="" max="1000000" min="1" placeholder="1">
+      </label>
+    </div>
   </form>
-  <a href="/calculator2">
+  <a href="/calculator2" class="link-calculator">
     Suivant
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
