@@ -91,3 +91,4 @@ CREATE TABLE IF NOT EXISTS achats_numerique (
                                        CHECK (heures_streaming_par_jour      BETWEEN 0 AND 12),
     FOREIGN KEY (response_id) REFERENCES responses(id) ON DELETE CASCADE,
     UNIQUE KEY uq_achats_response (response_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

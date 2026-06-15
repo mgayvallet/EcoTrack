@@ -10,8 +10,12 @@ $router = new MVC\Router($_SERVER["REQUEST_URI"]);
 $router->get('/', "HomeController@index");
 $router->get('/calculator', "HomeController@showCalculatorPage");
 
-//auth
-$router->get('/login', "HomeController@login");
-$router->get('/register', "HomeController@register");
+$router->get('/login', "UserController@loginPage");
+$router->post('/login', "UserController@login");
+
+$router->get('/register', "UserController@registerPage");
+$router->post('/register', "UserController@register");
+
+$router->get('/logout', "UserController@logout");
 
 $router->run();
