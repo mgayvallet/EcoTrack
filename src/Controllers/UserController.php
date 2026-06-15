@@ -48,7 +48,7 @@ class UserController
 
         if ($result['success']) {
             $_SESSION['success'] = $result['message'];
-            header('Location: /');
+            header('Location: /calculator');
             exit;
         } else {
             $_SESSION['error']['login'] = $result['message'];
@@ -100,8 +100,9 @@ class UserController
         $result = $this->user_manager->register($user);
 
         if ($result['success']) {
+            $this->user_manager->login($email, $password);
             $_SESSION['success'] = $result['message'];
-            header('Location: /login');
+            header('Location: /calculator');
             exit;
         } else {
             $_SESSION['error']['register'] = $result['message'];

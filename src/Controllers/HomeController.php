@@ -2,6 +2,8 @@
 
 namespace MVC\Controllers;
 
+use MVC\Models\UserManager;
+
 class HomeController
 {
     public function index(): void
@@ -16,6 +18,11 @@ class HomeController
 
     public function showCalculatorPage()
     {
+        if (!UserManager::isLoggedIn()) {
+            header('Location: /login');
+            exit;
+        }
+
         ob_start();
         require VIEWS . 'App/calculator.php';
         $content = ob_get_clean();
