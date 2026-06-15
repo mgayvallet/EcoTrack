@@ -12,5 +12,5 @@
             <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </a>
-    <a href="#" class="btn-secondary">Découvrir les défis</a>
+    <a href="/challenge" class="btn-secondary">Découvrir les défis</a>
 </div>
