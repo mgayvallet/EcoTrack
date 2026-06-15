@@ -2,6 +2,9 @@
 
 namespace MVC\Controllers;
 
+use MVC\Models\QuestionManager;
+use MVC\Models\CarbonCalculator;
+
 class HomeController
 {
     public function index(): void
@@ -16,6 +19,9 @@ class HomeController
 
     public function showCalculatorPage()
     {
+        $questionManager = new QuestionManager();
+        $categories = $questionManager->getQuestionsByCategory();
+
         ob_start();
         require VIEWS . 'App/calculator.php';
         $content = ob_get_clean();
@@ -24,8 +30,6 @@ class HomeController
         require VIEWS . 'layout/layout.php';
     }
 
-
-
     public function showChallengePage()
     {
         ob_start();
@@ -33,6 +37,18 @@ class HomeController
         $content = ob_get_clean();
 
         $title = 'EcoTrack - Défis';
+    }
+
+    public function calculate()
+    {
+        $calculator = new CarbonCalculator();
+        $result = $calculator->calculate($_POST);
+
+        ob_start();
+        require VIEWS . 'App/result.php';
+        $content = ob_get_clean();
+
+        $title = 'EcoTrack - Votre résultat';
         require VIEWS . 'layout/layout.php';
     }
 
