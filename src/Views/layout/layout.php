@@ -21,7 +21,7 @@
             </a>
 
             <nav class="site-nav">
-                <a href="/calculateur">Calculateur</a>
+                <a href="/calculator">Calculateur</a>
                 <a href="/defis">Défis</a>
                 <a href="/articles">Articles</a>
                 <a href="/login" class="btn-connexion">Connexion</a>
