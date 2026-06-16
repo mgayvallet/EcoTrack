@@ -21,6 +21,10 @@ SET time_zone = "+00:00";
 -- Base de données : `ecotrack`
 --
 
+DROP DATABASE IF EXISTS `ecotrack`;
+CREATE DATABASE `ecotrack` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `ecotrack`;
+
 -- --------------------------------------------------------
 
 --
@@ -42,6 +46,31 @@ CREATE TABLE IF NOT EXISTS `defis` (
   KEY `difficulte_id` (`difficulte_id`),
   KEY `type_defi_id` (`type_defi_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `defis`
+-- Un défi par catégorie du QCM (transport, logement, alimentation, numerique)
+-- et par niveau de difficulté, afin de proposer le défi adapté au poste
+-- le plus émetteur de l'empreinte calculée.
+--
+
+INSERT INTO `defis` (`id`, `titre`, `description`, `difficulte_id`, `type_defi_id`, `points`, `co2_economise`, `actif`) VALUES
+-- Transport (type_defi_id = 3)
+(1, 'Privilégier la marche ou le vélo', 'Laissez la voiture au garage pour vos trajets de moins de 5 km pendant une semaine', 1, 3, 20, 5.00, 1),
+(2, 'Faire du vélo pendant 2 semaines', 'Ne plus utiliser la voiture pendant au moins 2 semaines', 2, 3, 50, 20.00, 1),
+(3, 'Éviter l''avion et privilégier le train', 'Remplacez un trajet en avion par le train pour votre prochain déplacement', 3, 3, 100, 50.00, 1),
+-- Logement (type_defi_id = 1)
+(4, 'Débrancher vos appareils', 'Débranchez tous les appareils en veille', 1, 1, 25, 0.80, 1),
+(5, 'Baisser le chauffage de 1°C', 'Réduisez la température de votre logement de 1°C pendant un mois', 2, 1, 40, 10.00, 1),
+(6, 'Passer à l''énergie verte', 'Souscrivez à un fournisseur d''électricité 100% renouvelable', 3, 1, 100, 60.00, 1),
+-- Alimentation (type_defi_id = 2)
+(7, 'Un repas végétarien par semaine', 'Remplacez un repas avec viande par un repas végétarien chaque semaine', 1, 2, 25, 3.00, 1),
+(8, 'Manger local et de saison', 'Privilégiez les produits locaux et de saison pendant 2 semaines', 2, 2, 40, 8.00, 1),
+(9, 'Manger moins de viande', 'Ne mangez de la viande qu''une seule fois par semaine', 3, 2, 100, 15.00, 1),
+-- Achats & numérique (type_defi_id = 4)
+(10, 'Réduire la qualité du streaming', 'Passez votre streaming vidéo en qualité standard plutôt qu''en HD pendant une semaine', 1, 4, 20, 2.00, 1),
+(11, 'Acheter un appareil reconditionné', 'Choisissez du reconditionné pour votre prochain achat électronique', 2, 4, 50, 30.00, 1),
+(12, 'Zéro vêtement neuf pendant 1 mois', 'N''achetez aucun vêtement neuf pendant un mois (seconde main autorisée)', 3, 4, 80, 40.00, 1);
 
 -- --------------------------------------------------------
 
@@ -182,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `types_defi` (
   `libelle` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_types_defi_libelle` (`libelle`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `types_defi`
@@ -191,7 +220,8 @@ CREATE TABLE IF NOT EXISTS `types_defi` (
 INSERT INTO `types_defi` (`id`, `libelle`) VALUES
 (1, 'logement'),
 (2, 'nourriture'),
-(3, 'transport');
+(3, 'transport'),
+(4, 'numerique');
 
 -- --------------------------------------------------------
 
