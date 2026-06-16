@@ -5,6 +5,7 @@ namespace MVC\Controllers;
 use MVC\Models\QuestionManager;
 use MVC\Models\CarbonCalculator;
 use MVC\Models\EmpreinteManager;
+use MVC\Models\DefiManager;
 
 class HomeController
 {
@@ -33,12 +34,30 @@ class HomeController
 
     public function showChallengePage()
     {
+        $defiManager = new DefiManager();
+        $userId = (int) $_SESSION['user_id'];
+
+        $empreinte    = $defiManager->getLatestEmpreinte($userId);
+        $posteFocus   = $defiManager->getPosteFocus($userId);
+        $defis        = $defiManager->getDailyDefis($userId, 3);
+        $stats        = $defiManager->getStats($userId);
+        $completedIds = $defiManager->getCompletedTodayIds($userId);
+
         ob_start();
         require VIEWS . 'App/challenge.php';
         $content = ob_get_clean();
 
         $title = 'EcoTrack - Défis';
         require VIEWS . 'layout/layout.php';
+    }
+
+    public function validateChallenge($id)
+    {
+        $defiManager = new DefiManager();
+        $defiManager->validateDefi((int) $_SESSION['user_id'], (int) $id);
+
+        header('Location: /challenge');
+        exit;
     }
 
     public function calculate()

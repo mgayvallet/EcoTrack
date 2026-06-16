@@ -118,6 +118,25 @@ CREATE TABLE IF NOT EXISTS `empreintes` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `defis_completes`
+-- Suit les défis validés par chaque utilisateur (points, CO2, série).
+--
+
+DROP TABLE IF EXISTS `defis_completes`;
+CREATE TABLE IF NOT EXISTS `defis_completes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `defi_id` int NOT NULL,
+  `completed_on` date NOT NULL,
+  `completed_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uq_user_defi_jour` (`user_id`,`defi_id`,`completed_on`),
+  KEY `defi_id` (`defi_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `questions`
 --
 
@@ -251,6 +270,13 @@ CREATE TABLE IF NOT EXISTS `users` (
 ALTER TABLE `defis`
   ADD CONSTRAINT `defis_ibfk_1` FOREIGN KEY (`difficulte_id`) REFERENCES `difficultes` (`id`),
   ADD CONSTRAINT `defis_ibfk_2` FOREIGN KEY (`type_defi_id`) REFERENCES `types_defi` (`id`);
+
+--
+-- Contraintes pour la table `defis_completes`
+--
+ALTER TABLE `defis_completes`
+  ADD CONSTRAINT `defis_completes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `defis_completes_ibfk_2` FOREIGN KEY (`defi_id`) REFERENCES `defis` (`id`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `empreintes`
