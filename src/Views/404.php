@@ -196,7 +196,7 @@
                     </svg>
                     Retour à l'accueil
                 </a>
-                <a href="/defis" class="err-btn-secondary">Découvrir les défis</a>
+                <a href="/challenge" class="err-btn-secondary">Découvrir les défis</a>
             </div>
 
         </div>
