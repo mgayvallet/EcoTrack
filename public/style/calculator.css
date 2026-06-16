@@ -10,7 +10,7 @@ hgroup h1 {
 	font-weight: 700;
 }
 hgroup p {
-	color: #6a6e62;
+	color: var(--text-muted);
 	font-size: 24px;
 	font-weight: 600;
 }
@@ -24,9 +24,9 @@ section {
 	padding: 40px 80px;
 	border-radius: 20px;
 	text-align: left;
-	background-color: #fff;
-	-webkit-box-shadow: 0px 0px 8px 0px #dddeda;
-	box-shadow: 0px 0px 8px 0px #dddeda;
+	background-color: var(--surface);
+	-webkit-box-shadow: 0px 0px 8px 0px var(--shadow);
+	box-shadow: 0px 0px 8px 0px var(--shadow);
 	width: 38%;
 }
 section div,
@@ -35,7 +35,7 @@ section form {
 }
 form {
 	text-align: left;
-	background-color: #fff;
+	background-color: var(--surface);
 }
 .step-div {
 	display: flex;
@@ -56,12 +56,12 @@ form {
 .step-div hgroup p {
 	font-size: 14px;
 	font-weight: 600;
-	color: #6a6e62;
+	color: var(--text-muted);
 }
 .progress-container {
 	width: 100%;
 	height: 6px;
-	background: #d9e6df;
+	background: var(--track);
 	border-radius: 999px;
 	overflow: hidden;
 	margin-bottom: 50px;
@@ -84,7 +84,7 @@ form div h3 {
 form div p {
 	font-size: 14px;
 	font-weight: 600;
-	color: #6a6e62;
+	color: var(--text-muted);
 }
 form .label-container {
 	display: flex;
@@ -102,12 +102,14 @@ form label {
 label input,
 label select {
 	border-radius: 10px;
-	border: 1px solid #ecede9;
+	border: 1px solid var(--border);
 	padding: 14px 0 14px 20px;
-	-webkit-box-shadow: 0px 1px 2px 0px #000000;
-	box-shadow: 0px 1px 2px 0px #000000;
+	-webkit-box-shadow: 0px 1px 2px 0px var(--shadow);
+	box-shadow: 0px 1px 2px 0px var(--shadow);
 	font-size: 14px;
 	font-weight: 600;
+	background-color: var(--surface);
+	color: var(--text-dark);
 }
 label select {
 	padding: 6px 0 6px 20px;
@@ -171,7 +173,7 @@ label input::-webkit-outer-spin-button {
 .question-aide {
 	font-size: 13px;
 	font-weight: 500;
-	color: #6a6e62;
+	color: var(--text-muted);
 }
 
 .slider-row {
@@ -217,14 +219,14 @@ label input::-webkit-outer-spin-button {
 .result-unit {
 	font-size: 16px;
 	font-weight: 600;
-	color: #6a6e62;
+	color: var(--text-muted);
 }
 
 .result-verdict {
 	text-align: center;
 	font-size: 15px;
 	font-weight: 600;
-	color: #1a1a1a;
+	color: var(--text-dark);
 	margin-bottom: 24px;
 }
 
@@ -234,10 +236,10 @@ label input::-webkit-outer-spin-button {
 	width: 100%;
 	font-size: 14px;
 	font-weight: 600;
-	color: #6a6e62;
+	color: var(--text-muted);
 	padding-bottom: 24px;
 	margin-bottom: 24px;
-	border-bottom: 1px solid #ecede9;
+	border-bottom: 1px solid var(--border);
 }
 
 .result-breakdown {
@@ -259,7 +261,7 @@ label input::-webkit-outer-spin-button {
 .result-track {
 	width: 100%;
 	height: 10px;
-	background: #d9e6df;
+	background: var(--track);
 	border-radius: 999px;
 	overflow: hidden;
 }

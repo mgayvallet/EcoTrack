@@ -5,6 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= htmlspecialchars($title ?? 'EcoTrack') ?></title>
+    <script>
+        // Applique le thème avant le rendu pour éviter le flash.
+        (function () {
+            try {
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <link rel="stylesheet" href="/style/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
@@ -113,10 +123,25 @@
                 }
             });
 
-            // Bouton mode sombre : juste l'état visuel du switch (logique non implémentée).
+            // Bouton mode sombre : bascule le thème de tout le site et le mémorise.
             const darkBtn = document.getElementById('darkModeToggle');
+            const root = document.documentElement;
+
+            function syncDark() {
+                darkBtn.classList.toggle('on', root.getAttribute('data-theme') === 'dark');
+            }
+            syncDark();
+
             darkBtn.addEventListener('click', function () {
-                darkBtn.classList.toggle('on');
+                const isDark = root.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    root.removeAttribute('data-theme');
+                    try { localStorage.setItem('theme', 'light'); } catch (e) {}
+                } else {
+                    root.setAttribute('data-theme', 'dark');
+                    try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+                }
+                syncDark();
             });
         })();
     </script>

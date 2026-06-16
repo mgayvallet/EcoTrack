@@ -11,7 +11,7 @@ hgroup h1 {
 	font-weight: 700;
 }
 hgroup p {
-	color: #6a6e62;
+	color: var(--text-muted);
 	text-align: left;
 	font-size: 24px;
 	font-weight: 600;
@@ -34,9 +34,10 @@ section .container .card {
 	gap: 50px;
 	justify-content: space-between;
 	padding: 20px 24px 23px;
-	border: #f2f3f0 solid 1px;
-	-webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	background: var(--surface);
+	border: var(--border) solid 1px;
+	-webkit-box-shadow: 0px 4px 4px 0px var(--shadow);
+	box-shadow: 0px 4px 4px 0px var(--shadow);
 	border-radius: 20px;
 }
 section .container .progress-card {
@@ -80,16 +81,16 @@ h2 {
 	transition: width 0.4s ease;
 }
 .challenge-banner {
-	background: #e8f6ee;
+	background: var(--green-light);
 	border: 1px solid #008a4733;
-	border-left: 4px solid #008f4c;
+	border-left: 4px solid var(--green);
 	border-radius: 12px;
 	padding: 16px 20px;
 }
 .challenge-banner p {
 	font-size: 16px;
 	font-weight: 500;
-	color: #16331f;
+	color: var(--text-dark);
 }
 .challenge-banner a {
 	color: #008f4c;
@@ -106,10 +107,11 @@ h2 {
 	flex-direction: column;
 	gap: 47px;
 	text-align: left;
+	background: var(--surface);
 	border-radius: 20px;
 	padding: 30px;
-	-webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 0px 4px 4px 0px var(--shadow);
+	box-shadow: 0px 4px 4px 0px var(--shadow);
 }
 h3 {
 	font-size: 24px;
@@ -142,9 +144,10 @@ h3 {
 .card-challenge {
 	padding: 18px;
 	border-radius: 20px;
-	border: #f2f3f0 1px solid;
-	-webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	background: var(--surface);
+	border: var(--border) 1px solid;
+	-webkit-box-shadow: 0px 4px 4px 0px var(--shadow);
+	box-shadow: 0px 4px 4px 0px var(--shadow);
 }
 .header-card {
 	display: flex;
@@ -154,7 +157,10 @@ h3 {
 }
 .logo-div-card {
 	border-radius: 8px;
-	padding: 8px 4px 2px 8px;
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .easy {
 	background-color: #57eb2a52;
@@ -166,7 +172,7 @@ h3 {
     background-color: #ff093e2e;
 }
 .header-card span {
-	border: #e5e5e5 1px solid;
+	border: var(--border) 1px solid;
 	border-radius: 9px;
 	padding: 3px 3px 0 3px;
 	height: 26px;
@@ -215,9 +221,9 @@ h4 {
 	border-radius: 7px;
 }
 .footer-card a.conseil {
-	background-color: #fafafa;
-	border: #e5e5e5 1px solid;
-	color: #000;
+	background-color: var(--surface-2);
+	border: var(--border) 1px solid;
+	color: var(--text-dark);
 }
 .footer-card a.validate {
 	background-color: #008a48;
@@ -225,9 +231,9 @@ h4 {
 	color: #fff;
 }
 .footer-card .validate.validated {
-	background-color: #e8f6ee;
-	border: #008a48 1px solid;
-	color: #008a48;
+	background-color: var(--green-light);
+	border: var(--green) 1px solid;
+	color: var(--green);
 	text-align: center;
 	font-size: 16px;
 	font-weight: 600;
