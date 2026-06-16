@@ -11,6 +11,7 @@ $router->get('/', "HomeController@index");
 $router->get('/calculator', "HomeController@showCalculatorPage")->auth();
 $router->get('/challenge', "HomeController@showChallengePage")->auth();
 $router->get('/challenge/validate/:id', "HomeController@validateChallenge")->auth();
+$router->get('/contact', "HomeController@showContactPage")->auth();
 $router->post('/calculator', "HomeController@calculate")->auth();
 
 $router->get('/login', "UserController@loginPage");

@@ -51,6 +51,16 @@ class HomeController
         require VIEWS . 'layout/layout.php';
     }
 
+    public function showContactPage()
+    {
+        ob_start();
+        require VIEWS . 'App/contact.php';
+        $content = ob_get_clean();
+
+        $title = 'EcoTrack - Contact';
+        require VIEWS . 'layout/layout.php';
+    }
+
     public function validateChallenge($id)
     {
         $defiManager = new DefiManager();
