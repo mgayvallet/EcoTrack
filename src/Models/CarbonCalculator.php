@@ -27,10 +27,11 @@ class CarbonCalculator
     ];
 
     private const FACTEUR_PART_LOCALE = [
-        'quasi_100'  => 0.85,
-        'plutot_oui' => 0.92,
-        'environ_50' => 1.0,
-        'peu_ou_pas' => 1.08,
+        '100'  => 0.85,
+        '75' => 0.92,
+        '50' => 1.0,
+        '25' => 1.04,
+        '0' => 1.08,
     ];
 
     public function calculate(array $answers): array
