@@ -85,7 +85,7 @@ INSERT INTO `defis` (`id`, `titre`, `description`, `difficulte_id`, `type_defi_i
 
 -- Achats & numérique (type_defi_id = 4)
 
-(19, 'Streaming en qualité standard', 'Passez votre streaming en qualité SD plutôt qu\'en HD pour toute la journée', 1, 4, 20, 0.04, 1),
+(19, 'Streaming en qualité standard', 'Passez votre streaming en qualité SD plutôt qu\'en HD pour toute la journée', 1, 4, 20, 0.1, 1),
 (20, 'Rechercher un appareil reconditionné', 'Identifiez et comparez des offres reconditionnées pour votre prochain achat électronique', 2, 4, 50, 0.05, 1),
 (21, 'Zéro achat vestimentaire aujourd\'hui', 'Ne commandez et n\'achetez aucun vêtement neuf de toute la journée', 3, 4, 80, 0.05, 1),
 (22, 'Supprime les mails inutiles', '1000 mails supprimés correspondent à 10g de CO2 !', 1, 4, 10, 0.01, 1),
