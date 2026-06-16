@@ -21,7 +21,7 @@ $iconMap = [
     1 => 'defi-home.svg', // logement
     2 => 'defi-food.svg', // nourriture
     3 => 'defi-velo.svg', // transport
-    4 => 'logo.svg',      // numerique (pas d'icône dédiée)
+    4 => 'defi-screen.svg', // numerique 
 ];
 
 $totalDefis     = max(1, (int) $stats['total']);
@@ -67,13 +67,15 @@ $dailyPct       = round($dailyDone / 3 * 100);
     <?php if (!$empreinte): ?>
         <div class="challenge-banner">
             <p>Vous n'avez pas encore calculé votre empreinte carbone.
-               <a href="/calculator">Faites le calculateur</a> pour obtenir des défis personnalisés.</p>
+                <a href="/calculator">Faites le calculateur</a> pour obtenir des défis personnalisés.
+            </p>
         </div>
     <?php else: ?>
         <div class="challenge-banner">
             <p>D'après votre dernier calcul, votre poste le plus émetteur est
-               <strong><?= htmlspecialchars($posteFocus) ?></strong>.
-               Voici les défis prioritaires pour réduire votre empreinte.</p>
+                <strong><?= htmlspecialchars($posteFocus) ?></strong>.
+                Voici les défis prioritaires pour réduire votre empreinte.
+            </p>
         </div>
     <?php endif; ?>
 

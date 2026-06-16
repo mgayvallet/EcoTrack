@@ -163,13 +163,13 @@ h3 {
 	justify-content: center;
 }
 .easy {
-	background-color: #57eb2a52;
+	background-color: #57eb2a80;
 }
 .mid {
-    background-color: #ffb04252;
+    background-color: #ff8000cc;
 }
 .hard {
-    background-color: #ff093e2e;
+    background-color: #ff093e80;
 }
 .header-card span {
 	border: var(--border) 1px solid;
