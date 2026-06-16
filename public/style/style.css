@@ -107,19 +107,141 @@ nav {
 	background-color: #007040;
 }
 
-.user-name {
+.user-menu {
+	position: relative;
+}
+
+.user-menu .user-name {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	background: none;
+	border: none;
+	padding: 6px 10px;
+	border-radius: 8px;
 	color: var(--text-dark);
+	font-family: var(--font);
 	font-size: 15px;
 	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s;
 }
 
-.site-nav .btn-connexion.btn-logout {
-	background-color: #e53935;
+.user-menu .user-name:hover {
+	background-color: #f2f3f0;
 }
 
-.site-nav .btn-connexion.btn-logout:hover {
-	background-color: #b71c1c;
-	color: white;
+.user-menu-caret {
+	transition: transform 0.2s ease;
+}
+
+.user-menu.open .user-menu-caret {
+	transform: rotate(180deg);
+}
+
+.user-menu-popup {
+	position: absolute;
+	top: calc(100% + 8px);
+	right: 0;
+	min-width: 200px;
+	background: #fff;
+	border: 1px solid #ececec;
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	padding: 6px;
+	display: none;
+	flex-direction: column;
+	gap: 2px;
+	z-index: 50;
+}
+
+.user-menu.open .user-menu-popup {
+	display: flex;
+}
+
+.user-menu-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 10px 12px;
+	border: none;
+	background: none;
+	border-radius: 8px;
+	font-family: var(--font);
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--text-dark);
+	text-decoration: none;
+	cursor: pointer;
+	transition: background 0.15s;
+}
+
+.user-menu-item:hover {
+	background-color: #f2f3f0;
+}
+
+.site-nav .user-menu-logout {
+	color: #e53935;
+}
+
+.site-nav .user-menu-logout:hover {
+	background-color: #fdeceb;
+	color: #e53935;
+}
+
+/* Switch du mode sombre (visuel uniquement) */
+.switch {
+	position: relative;
+	width: 38px;
+	height: 22px;
+	background: #d2d4cd;
+	border-radius: 999px;
+	transition: background 0.2s;
+	flex-shrink: 0;
+}
+
+.switch-knob {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 18px;
+	height: 18px;
+	background: #fff;
+	border-radius: 50%;
+	transition: transform 0.2s ease;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.switch-icon {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+}
+
+/* État clair (off) : soleil visible, lune cachée */
+.switch-moon {
+	display: none;
+}
+
+/* État sombre (on) : lune visible, soleil caché */
+.user-menu-item.on .switch-sun {
+	display: none;
+}
+
+.user-menu-item.on .switch-moon {
+	display: block;
+}
+
+.user-menu-item.on .switch {
+	background: var(--green);
+}
+
+.user-menu-item.on .switch-knob {
+	transform: translateX(16px);
 }
 
 main {
