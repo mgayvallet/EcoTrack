@@ -55,22 +55,42 @@ CREATE TABLE IF NOT EXISTS `defis` (
 --
 
 INSERT INTO `defis` (`id`, `titre`, `description`, `difficulte_id`, `type_defi_id`, `points`, `co2_economise`, `actif`) VALUES
+
 -- Transport (type_defi_id = 3)
-(1, 'Privilégier la marche ou le vélo', 'Laissez la voiture au garage pour vos trajets de moins de 5 km pendant une semaine', 1, 3, 20, 5.00, 1),
-(2, 'Faire du vélo pendant 2 semaines', 'Ne plus utiliser la voiture pendant au moins 2 semaines', 2, 3, 50, 20.00, 1),
-(3, 'Éviter l''avion et privilégier le train', 'Remplacez un trajet en avion par le train pour votre prochain déplacement', 3, 3, 100, 50.00, 1),
+
+(1, 'Trajet à pied ou à vélo', 'Effectuez au moins un trajet de moins de 5 km à pied ou à vélo aujourd\'hui', 1, 3, 20, 1.20, 1),
+(2, 'Journée sans voiture', 'N\'utilisez pas votre voiture de toute la journée', 2, 3, 50, 3.50, 1),
+(3, 'Zéro avion aujourd\'hui', 'Choisissez le train ou visioconférence plutôt que l\'avion pour tout déplacement prévu ce jour', 3, 3, 100, 50.00, 1),
+(4, 'Transport en commun', 'Prends au moins un transport en commun aujourd\'hui', 2, 3, 50, 2.10, 1),
+(5, 'Consommation organisée', 'Planifie tes trajets à l\'avance pour les optimiser', 1, 3, 20, 0.60, 1),
+(6, 'Télétravail', 'Télétravaille aujourd\'hui', 3, 3, 100, 3.50, 1),
+
 -- Logement (type_defi_id = 1)
-(4, 'Débrancher vos appareils', 'Débranchez tous les appareils en veille', 1, 1, 25, 0.80, 1),
-(5, 'Baisser le chauffage de 1°C', 'Réduisez la température de votre logement de 1°C pendant un mois', 2, 1, 40, 10.00, 1),
-(6, 'Passer à l''énergie verte', 'Souscrivez à un fournisseur d''électricité 100% renouvelable', 3, 1, 100, 60.00, 1),
+
+(7, 'Débrancher les appareils en veille', 'Débranchez tous vos appareils en veille dès ce matin', 1, 1, 25, 0.10, 1),
+(8, 'Baisser le chauffage d\'1°C aujourd\'hui', 'Réduisez la température de votre logement d\'1°C pour toute la journée', 2, 1, 40, 0.40, 1),
+(9, 'Renseignez-vous sur l\'énergie verte', 'Comparez et choisissez un fournisseur d\'électricité 100% renouvelable aujourd\'hui', 3, 1, 100, 0.05, 1),
+(10, 'Rapide efficace', 'Prends une douche de moins de 5 minutes', 2, 1, 50, 0.30, 1),
+(11, '2 en 1', 'Utilise l\'eau non potable (comme l\'eau de rinçage des légumes) pour arroser les plantes', 3, 1, 100, 0.05, 1),
+(12, 'Éteins les lumières inutiles', 'Ne laisse pas de lumière allumée si il fait jour ou si tu sors d\'une pièce', 1, 1, 20, 0.08, 1),
+
 -- Alimentation (type_defi_id = 2)
-(7, 'Un repas végétarien par semaine', 'Remplacez un repas avec viande par un repas végétarien chaque semaine', 1, 2, 25, 3.00, 1),
-(8, 'Manger local et de saison', 'Privilégiez les produits locaux et de saison pendant 2 semaines', 2, 2, 40, 8.00, 1),
-(9, 'Manger moins de viande', 'Ne mangez de la viande qu''une seule fois par semaine', 3, 2, 100, 15.00, 1),
+
+(13, 'Un repas végétarien aujourd\'hui', 'Préparez et mangez un repas entièrement végétarien ce jour', 1, 2, 25, 1.50, 1),
+(14, 'Manger local aujourd\'hui', 'Achetez uniquement des produits locaux et de saison pour vos repas du jour', 2, 2, 40, 0.80, 1),
+(15, 'Journée sans viande', 'Ne consommez aucun produit carné de toute la journée', 3, 2, 100, 4.50, 1),
+(16, 'Cuisine les restes', 'Utilise les restes pour tous tes repas aujourd\'hui', 2, 2, 50, 1.20, 1),
+(17, 'Prévois ta liste de courses', 'Fais une liste de courses pour éviter d\'acheter ce dont tu n\'as pas besoin', 1, 2, 20, 0.50, 1),
+(18, 'Fait maison', 'Fais TOUS tes plats de la journée maison', 3, 2, 100, 2.00, 1),
+
 -- Achats & numérique (type_defi_id = 4)
-(10, 'Réduire la qualité du streaming', 'Passez votre streaming vidéo en qualité standard plutôt qu''en HD pendant une semaine', 1, 4, 20, 2.00, 1),
-(11, 'Acheter un appareil reconditionné', 'Choisissez du reconditionné pour votre prochain achat électronique', 2, 4, 50, 30.00, 1),
-(12, 'Zéro vêtement neuf pendant 1 mois', 'N''achetez aucun vêtement neuf pendant un mois (seconde main autorisée)', 3, 4, 80, 40.00, 1);
+
+(19, 'Streaming en qualité standard', 'Passez votre streaming en qualité SD plutôt qu\'en HD pour toute la journée', 1, 4, 20, 0.04, 1),
+(20, 'Rechercher un appareil reconditionné', 'Identifiez et comparez des offres reconditionnées pour votre prochain achat électronique', 2, 4, 50, 0.05, 1),
+(21, 'Zéro achat vestimentaire aujourd\'hui', 'Ne commandez et n\'achetez aucun vêtement neuf de toute la journée', 3, 4, 80, 0.05, 1),
+(22, 'Supprime les mails inutiles', '1000 mails supprimés correspondent à 10g de CO2 !', 1, 4, 10, 0.01, 1),
+(23, 'Bob le bricoleur', 'Répare un objet cassé plutôt que de le jeter', 3, 4, 100, 2.50, 1),
+(24, 'Tout le monde dort, tes appareils aussi', 'Active le mode sombre sur tous tes appareils et éteins-les complètement avant de dormir', 2, 4, 50, 0.15, 1);
 
 -- --------------------------------------------------------
 
