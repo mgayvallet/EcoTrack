@@ -311,3 +311,65 @@ label input::-webkit-outer-spin-button {
 	border-radius: 999px;
 	transition: width 0.5s ease;
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+	section {
+		width: 70%;
+		padding: 40px 48px;
+	}
+}
+
+@media (max-width: 768px) {
+	hgroup {
+		margin-bottom: 32px;
+	}
+
+	hgroup h1 {
+		font-size: 30px;
+	}
+
+	hgroup p {
+		font-size: 18px;
+	}
+
+	section {
+		width: 100%;
+		padding: 32px 24px;
+	}
+
+	label select {
+		max-width: 100%;
+	}
+
+	.result-value {
+		font-size: 44px;
+	}
+}
+
+@media (max-width: 480px) {
+	hgroup h1 {
+		font-size: 26px;
+	}
+
+	section {
+		padding: 24px 18px;
+	}
+
+	.form-nav {
+		flex-direction: column;
+	}
+
+	.slider-row {
+		gap: 10px;
+	}
+
+	.slider-value {
+		min-width: 70px;
+	}
+
+	.result-compare {
+		flex-direction: column;
+		gap: 6px;
+	}
+}

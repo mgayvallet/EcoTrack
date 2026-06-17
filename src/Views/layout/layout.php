@@ -30,7 +30,13 @@
                 <span class="logo-text">EcoTrack</span>
             </a>
 
-            <nav class="site-nav">
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="siteNav">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+            <nav class="site-nav" id="siteNav">
                 <a href="/calculator">Calculateur</a>
                 <a href="/challenge">Défis</a>
                 <a href="/articles">Articles</a>
@@ -96,6 +102,27 @@
     </div>
 
     <script>
+        // Menu de navigation mobile (hamburger)
+        (function () {
+            const navToggle = document.getElementById('navToggle');
+            const siteNav = document.getElementById('siteNav');
+            if (!navToggle || !siteNav) return;
+
+            navToggle.addEventListener('click', function () {
+                const open = siteNav.classList.toggle('open');
+                navToggle.classList.toggle('open', open);
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+
+            siteNav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    siteNav.classList.remove('open');
+                    navToggle.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+
         (function () {
             const menu = document.getElementById('userMenu');
             if (!menu) return;

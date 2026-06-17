@@ -240,3 +240,68 @@ h4 {
 	padding: 8px 26px;
 	border-radius: 7px;
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+	section .container {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.cards-challenge {
+		grid-template-columns: 1fr 1fr;
+		gap: 32px;
+	}
+}
+
+@media (max-width: 768px) {
+	hgroup {
+		width: 100%;
+		margin-bottom: 28px;
+	}
+
+	hgroup h1 {
+		font-size: 30px;
+	}
+
+	hgroup p {
+		font-size: 18px;
+	}
+
+	section {
+		width: 100%;
+		gap: 32px;
+	}
+
+	section .container {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.challenge-container {
+		padding: 24px 20px;
+		gap: 32px;
+	}
+
+	.cards-challenge {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	hgroup h1 {
+		font-size: 26px;
+	}
+
+	.footer-card {
+		grid-template-columns: 1fr;
+	}
+
+	.footer-card a {
+		padding: 10px 18px;
+	}
+}

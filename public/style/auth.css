@@ -217,3 +217,18 @@ button:hover {
 .footer a:hover {
 	text-decoration: underline;
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	.subtitle {
+		margin-bottom: 28px;
+	}
+
+	.card {
+		padding: 28px 22px;
+	}
+}

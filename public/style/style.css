@@ -424,3 +424,165 @@ footer {
 	color: var(--green);
 	padding-left: 6px;
 }
+
+/* Bouton hamburger : masqué sur desktop */
+.nav-toggle {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.nav-toggle-bar {
+	display: block;
+	width: 24px;
+	height: 2.5px;
+	margin: 0 auto;
+	background: var(--text-dark);
+	border-radius: 2px;
+	transition:
+		transform 0.25s ease,
+		opacity 0.2s ease;
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(1) {
+	transform: translateY(7.5px) rotate(45deg);
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(2) {
+	opacity: 0;
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(3) {
+	transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+	header {
+		padding: 0 28px;
+	}
+
+	footer {
+		padding: 36px 28px 1rem;
+	}
+
+	.footer-inner {
+		grid-template-columns: 1.5fr 1fr 1fr;
+		gap: 24px;
+	}
+
+	.footer-tagline {
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	header {
+		padding: 0 20px;
+		position: relative;
+	}
+
+	.nav-toggle {
+		display: flex;
+	}
+
+	.site-nav {
+		display: none;
+		position: absolute;
+		top: 72px;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 4px;
+		padding: 12px 20px 20px;
+		background: var(--surface);
+		border-bottom: 1px solid var(--border);
+		box-shadow: 0 12px 24px var(--shadow);
+		z-index: 40;
+	}
+
+	.site-nav.open {
+		display: flex;
+	}
+
+	.site-nav a {
+		padding: 12px 8px;
+		font-size: 16px;
+		border-radius: 8px;
+	}
+
+	.site-nav a:hover {
+		background: var(--surface-2);
+	}
+
+	.site-nav .btn-connexion {
+		text-align: center;
+		padding: 13px 22px;
+		margin-top: 4px;
+	}
+
+	.user-menu {
+		width: 100%;
+	}
+
+	.user-menu .user-name {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.user-menu-popup {
+		position: static;
+		box-shadow: none;
+		border: none;
+		padding: 0;
+		margin-top: 4px;
+	}
+
+	main {
+		padding: 32px 20px;
+	}
+
+	footer {
+		padding: 32px 20px 1rem;
+	}
+
+	.footer-inner {
+		grid-template-columns: 1fr;
+		gap: 28px;
+	}
+
+	.footer-tagline {
+		font-size: 16px;
+	}
+
+	.footer-col h4 {
+		font-size: 20px;
+		margin-bottom: 16px;
+	}
+
+	.footer-col ul li a {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero-actions {
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+	}
+
+	.btn-primary,
+	.btn-secondary {
+		justify-content: center;
+	}
+}
