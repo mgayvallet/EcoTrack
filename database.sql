@@ -280,6 +280,21 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `uq_users_email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `password_resets`
+--
+
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_password_resets_email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Contraintes pour les tables déchargées
 --

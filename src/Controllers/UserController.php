@@ -114,6 +114,97 @@ class UserController
         }
     }
 
+    public function forgotPasswordPage()
+    {
+        $title = 'Mot de passe oublié';
+        require VIEWS . 'Auth/forgot-password.php';
+    }
+
+    public function forgotPassword()
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            header('Location: /forgot-password');
+            exit;
+        }
+
+        $email = $_POST['email'] ?? '';
+
+        $validator = new Validator($_POST);
+        $validator->validate([
+            'email' => ['required', 'email'],
+        ]);
+
+        if (!empty($validator->errors())) {
+            $_SESSION['error'] = $_SESSION['error'] ?? [];
+            $_SESSION['old'] = $_POST;
+            header('Location: /forgot-password');
+            exit;
+        }
+
+        $result = $this->user_manager->sendPasswordReset($email);
+
+        if ($result['success']) {
+            $_SESSION['success'] = $result['message'];
+        } else {
+            $_SESSION['error']['forgot'] = $result['message'];
+        }
+        header('Location: /forgot-password');
+        exit;
+    }
+
+    public function resetPasswordPage()
+    {
+        $title = 'Réinitialiser le mot de passe';
+        $token = $_GET['token'] ?? '';
+
+        if (empty($token) || !$this->user_manager->getEmailByToken($token)) {
+            $_SESSION['error']['reset'] = 'Ce lien de réinitialisation est invalide ou a expiré.';
+            header('Location: /forgot-password');
+            exit;
+        }
+
+        require VIEWS . 'Auth/reset-password.php';
+    }
+
+    public function resetPassword()
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            header('Location: /login');
+            exit;
+        }
+
+        $token = $_POST['token'] ?? '';
+        $password = $_POST['password'] ?? '';
+        $password_confirm = $_POST['password_confirm'] ?? '';
+
+        $validator = new Validator($_POST);
+        $validator->validate([
+            'password' => ['required', 'min:8'],
+        ]);
+
+        if ($password !== $password_confirm) {
+            $_SESSION['error']['password_confirm'] = 'Les mots de passe ne correspondent pas';
+        }
+
+        if (!empty($validator->errors()) || isset($_SESSION['error']['password_confirm'])) {
+            $_SESSION['error'] = $_SESSION['error'] ?? [];
+            header('Location: /reset-password?token=' . urlencode($token));
+            exit;
+        }
+
+        $result = $this->user_manager->resetPassword($token, $password);
+
+        if ($result['success']) {
+            $_SESSION['success'] = $result['message'];
+            header('Location: /login');
+            exit;
+        } else {
+            $_SESSION['error']['reset'] = $result['message'];
+            header('Location: /forgot-password');
+            exit;
+        }
+    }
+
     public function logout()
     {
         UserManager::logout();

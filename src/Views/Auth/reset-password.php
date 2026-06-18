@@ -35,15 +35,10 @@
 
 <body>
     <div class="container">
-        <h1>Bienvenue sur EcoTrack</h1>
-        <p class="subtitle">Connectez-vous pour continuer votre parcours écologique</p>
+        <h1>Nouveau mot de passe</h1>
+        <p class="subtitle">Choisissez un nouveau mot de passe pour votre compte</p>
 
         <div class="card">
-            <?php if (isset($_SESSION['success'])): ?>
-                <div class="success-message"><?= htmlspecialchars($_SESSION['success']) ?></div>
-                <?php unset($_SESSION['success']); ?>
-            <?php endif; ?>
-
             <?php if (isset($_SESSION['error'])): ?>
                 <?php foreach ($_SESSION['error'] as $field => $message): ?>
                     <div class="alert"><?= htmlspecialchars($message) ?></div>
@@ -51,20 +46,11 @@
                 <?php unset($_SESSION['error']); ?>
             <?php endif; ?>
 
-            <form method="POST" action="/login">
-                <div class="field">
-                    <label for="email">Adresse email</label>
-                    <div class="input-wrap">
-                        <img class="icon" src="assets/icons/email.svg" alt="">
-                        <input type="email" id="email" name="email" placeholder="exemple@gmail.com" value="<?= htmlspecialchars(old('email')) ?>" required>
-                    </div>
-                </div>
+            <form method="POST" action="/reset-password">
+                <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
 
                 <div class="field">
-                    <div class="label-row">
-                        <label for="password">Mot de passe</label>
-                        <a href="/forgot-password" class="forgot">Mot de passe oublié ?</a>
-                    </div>
+                    <label for="password">Nouveau mot de passe</label>
                     <div class="input-wrap has-toggle">
                         <img class="icon" src="assets/icons/password.svg" alt="">
                         <input type="password" id="password" name="password" placeholder="••••••••" required>
@@ -81,18 +67,30 @@
                     </div>
                 </div>
 
-                <div class="remember">
-                    <input type="checkbox" id="remember" name="remember">
-                    <span>Se souvenir de moi</span>
+                <div class="field">
+                    <label for="password_confirm">Confirmer le mot de passe</label>
+                    <div class="input-wrap has-toggle">
+                        <img class="icon" src="assets/icons/password.svg" alt="">
+                        <input type="password" id="password_confirm" name="password_confirm" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password" aria-label="Afficher le mot de passe">
+                            <svg class="eye" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                            <svg class="eye-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                                <line x1="1" y1="1" x2="23" y2="23" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
-                <button type="submit">Se connecter</button>
+                <button type="submit">Réinitialiser le mot de passe</button>
             </form>
         </div>
 
         <div class="footer">
-            <p>Pas encore de compte ? <a href="/register">Crée un compte</a></p>
-            <p><a href="/">Retour à l'accueil</a></p>
+            <p><a href="/login">Retour à la connexion</a></p>
         </div>
     </div>
 

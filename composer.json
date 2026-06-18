@@ -1,6 +1,8 @@
 {
     "name": "elie/template",
-    "require": {},
+    "require": {
+        "phpmailer/phpmailer": "^7.1"
+    },
     "autoload": {
         "psr-4": {
             "MVC\\": "src/"
