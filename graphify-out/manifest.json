@@ -1,0 +1,182 @@
+{
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\composer.json": {
+    "mtime": 1777968950.1278188,
+    "ast_hash": "956ac406b41ffba701766a84b7ad0839",
+    "semantic_hash": "956ac406b41ffba701766a84b7ad0839"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\database.sql": {
+    "mtime": 1781680526.364253,
+    "ast_hash": "5b0267fb3f134ce19431024575d705f1",
+    "semantic_hash": "5b0267fb3f134ce19431024575d705f1"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\index.php": {
+    "mtime": 1781614093.9123552,
+    "ast_hash": "1b54c0eaa2bde1130e3310733b200b29",
+    "semantic_hash": "1b54c0eaa2bde1130e3310733b200b29"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Controllers\\HomeController.php": {
+    "mtime": 1781614093.9361668,
+    "ast_hash": "3869733ac4696f2a9b024000d6a60094",
+    "semantic_hash": "3869733ac4696f2a9b024000d6a60094"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Controllers\\UserController.php": {
+    "mtime": 1781516503.709735,
+    "ast_hash": "f82bc547e4e9117a1be2c0203c18ee31",
+    "semantic_hash": "f82bc547e4e9117a1be2c0203c18ee31"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Helper.php": {
+    "mtime": 1777968950.204231,
+    "ast_hash": "32c627f54ece5a3d029701bd2b4a1b78",
+    "semantic_hash": "32c627f54ece5a3d029701bd2b4a1b78"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Models\\CarbonCalculator.php": {
+    "mtime": 1781610549.9838238,
+    "ast_hash": "3fed45c5ef13e12aedf96f1e9ff25dbf",
+    "semantic_hash": "3fed45c5ef13e12aedf96f1e9ff25dbf"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Models\\DefiManager.php": {
+    "mtime": 1781612721.4446225,
+    "ast_hash": "d38141fbb04d4184386ed65c25796053",
+    "semantic_hash": "d38141fbb04d4184386ed65c25796053"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Models\\EmpreinteManager.php": {
+    "mtime": 1781527477.4677725,
+    "ast_hash": "7476036370ea8f299826e3d0848152a2",
+    "semantic_hash": "7476036370ea8f299826e3d0848152a2"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Models\\QuestionManager.php": {
+    "mtime": 1781524510.6612797,
+    "ast_hash": "c1b269439ff5afa7b276e791c0dbbe2c",
+    "semantic_hash": "c1b269439ff5afa7b276e791c0dbbe2c"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Models\\User.php": {
+    "mtime": 1781511984.2872646,
+    "ast_hash": "19b6a019adc4d8a0eb473d6839827366",
+    "semantic_hash": "19b6a019adc4d8a0eb473d6839827366"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Models\\UserManager.php": {
+    "mtime": 1781516939.1785188,
+    "ast_hash": "7980913e586bac8d1ee2706f80f27471",
+    "semantic_hash": "7980913e586bac8d1ee2706f80f27471"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Route.php": {
+    "mtime": 1781517204.390702,
+    "ast_hash": "0f542d4d21c50c49ac257c9a81716132",
+    "semantic_hash": "0f542d4d21c50c49ac257c9a81716132"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Router.php": {
+    "mtime": 1781517209.762945,
+    "ast_hash": "0c975bd8e35d8528f471ee45d065e044",
+    "semantic_hash": "0c975bd8e35d8528f471ee45d065e044"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Validator.php": {
+    "mtime": 1777968950.23325,
+    "ast_hash": "dca24a50474a0841dbb9d63a175ab02f",
+    "semantic_hash": "dca24a50474a0841dbb9d63a175ab02f"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\404.php": {
+    "mtime": 1781613093.4130664,
+    "ast_hash": "8d0a54249ca75d07da33178bead2cef9",
+    "semantic_hash": "8d0a54249ca75d07da33178bead2cef9"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\App\\calculator.php": {
+    "mtime": 1781525243.9998713,
+    "ast_hash": "ac833ee637d7e67e7418d6f2259cb3e2",
+    "semantic_hash": "ac833ee637d7e67e7418d6f2259cb3e2"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\App\\challenge.php": {
+    "mtime": 1781680526.4569507,
+    "ast_hash": "d1f80223e1ba297de5e15dbdd14db4bd",
+    "semantic_hash": "d1f80223e1ba297de5e15dbdd14db4bd"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\App\\contact.php": {
+    "mtime": 1781614093.9441895,
+    "ast_hash": "b451fe05ad4c68d299f81da8003002fd",
+    "semantic_hash": "b451fe05ad4c68d299f81da8003002fd"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\App\\homepage.php": {
+    "mtime": 1781610550.025834,
+    "ast_hash": "1be69e4b612297ceaa44c5ff2bd38d47",
+    "semantic_hash": "1be69e4b612297ceaa44c5ff2bd38d47"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\App\\index.php": {
+    "mtime": 1777968950.322422,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\App\\result.php": {
+    "mtime": 1781524830.3750775,
+    "ast_hash": "4f8a0da50aefc9255fca46c83a3361b3",
+    "semantic_hash": "4f8a0da50aefc9255fca46c83a3361b3"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\Auth\\login.php": {
+    "mtime": 1781527477.4717195,
+    "ast_hash": "76bbf068780781f51c7f472213b04800",
+    "semantic_hash": "76bbf068780781f51c7f472213b04800"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\Auth\\register.php": {
+    "mtime": 1781527477.4727302,
+    "ast_hash": "8095ed71f7708fdcd407fa6a138cc8a6",
+    "semantic_hash": "8095ed71f7708fdcd407fa6a138cc8a6"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\Views\\layout\\layout.php": {
+    "mtime": 1781680530.0859337,
+    "ast_hash": "4b506b013d6bf248f7f18a509f8857e9",
+    "semantic_hash": "4b506b013d6bf248f7f18a509f8857e9"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\src\\config\\config.php": {
+    "mtime": 1779866134.4515128,
+    "ast_hash": "a5b34eb1a02b77715b425537fb956e5d",
+    "semantic_hash": "a5b34eb1a02b77715b425537fb956e5d"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\README.md": {
+    "mtime": 1777968950.1147513,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\assets\\icons\\dark.svg": {
+    "mtime": 1781613093.3940206,
+    "ast_hash": "3e1cdcb8abb6d11deb25102ae1283ec3",
+    "semantic_hash": "3e1cdcb8abb6d11deb25102ae1283ec3"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\assets\\icons\\defi-food.svg": {
+    "mtime": 1781680526.3803365,
+    "ast_hash": "cc91ebcc6da3c13fbf2b542dad98c2e5",
+    "semantic_hash": "cc91ebcc6da3c13fbf2b542dad98c2e5"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\assets\\icons\\defi-home.svg": {
+    "mtime": 1781680526.3926122,
+    "ast_hash": "313fded52ac42edb2f054d603b78883e",
+    "semantic_hash": "313fded52ac42edb2f054d603b78883e"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\assets\\icons\\defi-screen.svg": {
+    "mtime": 1781680526.4007475,
+    "ast_hash": "edf30721ae528044574cfe25f2ef1190",
+    "semantic_hash": "edf30721ae528044574cfe25f2ef1190"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\assets\\icons\\defi-velo.svg": {
+    "mtime": 1781680526.4308069,
+    "ast_hash": "a50b1c32cf27a756e7b6252e78071c4e",
+    "semantic_hash": "a50b1c32cf27a756e7b6252e78071c4e"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\assets\\icons\\email.svg": {
+    "mtime": 1781511791.4609377,
+    "ast_hash": "13ea3876243dd634e8a4a672c1fc43a2",
+    "semantic_hash": "13ea3876243dd634e8a4a672c1fc43a2"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\assets\\icons\\light.svg": {
+    "mtime": 1781613093.4044547,
+    "ast_hash": "1454589118ecf0996f929f04ea34acae",
+    "semantic_hash": "1454589118ecf0996f929f04ea34acae"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\assets\\icons\\logo.svg": {
+    "mtime": 1781511791.4609377,
+    "ast_hash": "1db5e67338e309e039bee2ed303af146",
+    "semantic_hash": "1db5e67338e309e039bee2ed303af146"
+  },
+  "C:\\Users\\MathieuG\\Documents\\GitHub\\EcoTrack\\public\\assets\\icons\\name.svg": {
+    "mtime": 1781511791.4790156,
+    "ast_hash": "ec73b9d21018d77c45fa7623f064f7f6",
+    "semantic_hash": "ec73b9d21018d77c45fa7623f064f7f6"
+  }
+}
