@@ -106,13 +106,15 @@ $dailyPct       = round($dailyDone / 3 * 100);
                             </div>
                             <span><?= htmlspecialchars($diffLabel) ?></span>
                         </div>
-                        <div class="para-card">
-                            <h4><?= htmlspecialchars($defi['titre']) ?></h4>
-                            <p><?= htmlspecialchars($defi['description']) ?></p>
-                        </div>
-                        <div class="mid-card">
-                            <p><?= $co2 ?> kg de CO2</p>
-                            <span><?= (int) $defi['points'] ?> points</span>
+                        <div class="al-cont">
+                            <div class="para-card">
+                                <h4><?= htmlspecialchars($defi['titre']) ?></h4>
+                                <p><?= htmlspecialchars($defi['description']) ?></p>
+                            </div>
+                            <div class="mid-card">
+                                <p><?= $co2 ?> kg de CO2</p>
+                                <span><?= (int) $defi['points'] ?> points</span>
+                            </div>
                         </div>
                         <div class="footer-card">
                             <a href="/calculator" class="conseil">Voir les conseils</a>
