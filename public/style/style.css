@@ -146,6 +146,7 @@ nav {
 	font-weight: 600;
 	cursor: pointer;
 	transition: background 0.2s;
+	margin: 0;
 }
 
 .user-menu .user-name:hover {
