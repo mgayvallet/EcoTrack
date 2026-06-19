@@ -17,8 +17,12 @@ class UserController
 
     public function loginPage()
     {
-        $title = 'Connexion';
+        ob_start();
         require VIEWS . 'Auth/login.php';
+        $content = ob_get_clean();
+
+        $title = 'Connexion';
+        require VIEWS . 'layout/layout-user.php';
     }
 
     public function login()
@@ -60,8 +64,12 @@ class UserController
 
     public function registerPage()
     {
-        $title = 'Inscription';
+        ob_start();
         require VIEWS . 'Auth/register.php';
+        $content = ob_get_clean();
+
+        $title = 'Inscription';
+        require VIEWS . 'layout/layout-user.php';
     }
 
     public function register()

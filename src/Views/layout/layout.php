@@ -7,7 +7,7 @@
     <title><?= htmlspecialchars($title ?? 'EcoTrack') ?></title>
     <script>
         // Applique le thème avant le rendu pour éviter le flash.
-        (function () {
+        (function() {
             try {
                 if (localStorage.getItem('theme') === 'dark') {
                     document.documentElement.setAttribute('data-theme', 'dark');
@@ -45,7 +45,7 @@
                         <button type="button" class="user-name" id="userMenuToggle" aria-haspopup="true" aria-expanded="false">
                             <?= htmlspecialchars($_SESSION['user_name'] ?? '') ?>
                             <svg class="user-menu-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
                         <div class="user-menu-popup" id="userMenuPopup">
@@ -62,7 +62,26 @@
                         </div>
                     </div>
                 <?php else: ?>
-                    <a href="/login" class="btn-connexion">Connexion</a>
+                    <div class="user-menu" id="userMenu">
+                        <button type="button" class="user-name" id="userMenuToggle" aria-haspopup="true" aria-expanded="false">
+                            <?= htmlspecialchars($_SESSION['user_name'] ?? '') ?>
+                            <svg class="user-menu-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="user-menu-popup" id="userMenuPopup">
+                            <button type="button" class="user-menu-item" id="darkModeToggle">
+                                <span>Mode sombre</span>
+                                <span class="switch" aria-hidden="true">
+                                    <span class="switch-knob">
+                                        <img class="switch-icon switch-sun" src="/assets/icons/light.svg" alt="">
+                                        <img class="switch-icon switch-moon" src="/assets/icons/dark.svg" alt="">
+                                    </span>
+                                </span>
+                            </button>
+                            <a href="/login" class="btn-connexion">Connexion</a>
+                        </div>
+                    </div>
                 <?php endif; ?>
             </nav>
         </header>
@@ -103,19 +122,19 @@
 
     <script>
         // Menu de navigation mobile (hamburger)
-        (function () {
+        (function() {
             const navToggle = document.getElementById('navToggle');
             const siteNav = document.getElementById('siteNav');
             if (!navToggle || !siteNav) return;
 
-            navToggle.addEventListener('click', function () {
+            navToggle.addEventListener('click', function() {
                 const open = siteNav.classList.toggle('open');
                 navToggle.classList.toggle('open', open);
                 navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
             });
 
-            siteNav.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
+            siteNav.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
                     siteNav.classList.remove('open');
                     navToggle.classList.remove('open');
                     navToggle.setAttribute('aria-expanded', 'false');
@@ -123,27 +142,27 @@
             });
         })();
 
-        (function () {
+        (function() {
             const menu = document.getElementById('userMenu');
             if (!menu) return;
 
             const toggle = document.getElementById('userMenuToggle');
             const popup = document.getElementById('userMenuPopup');
 
-            toggle.addEventListener('click', function (e) {
+            toggle.addEventListener('click', function(e) {
                 e.stopPropagation();
                 const open = menu.classList.toggle('open');
                 toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
             });
 
-            document.addEventListener('click', function (e) {
+            document.addEventListener('click', function(e) {
                 if (!menu.contains(e.target)) {
                     menu.classList.remove('open');
                     toggle.setAttribute('aria-expanded', 'false');
                 }
             });
 
-            document.addEventListener('keydown', function (e) {
+            document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     menu.classList.remove('open');
                     toggle.setAttribute('aria-expanded', 'false');
@@ -159,14 +178,18 @@
             }
             syncDark();
 
-            darkBtn.addEventListener('click', function () {
+            darkBtn.addEventListener('click', function() {
                 const isDark = root.getAttribute('data-theme') === 'dark';
                 if (isDark) {
                     root.removeAttribute('data-theme');
-                    try { localStorage.setItem('theme', 'light'); } catch (e) {}
+                    try {
+                        localStorage.setItem('theme', 'light');
+                    } catch (e) {}
                 } else {
                     root.setAttribute('data-theme', 'dark');
-                    try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+                    try {
+                        localStorage.setItem('theme', 'dark');
+                    } catch (e) {}
                 }
                 syncDark();
             });

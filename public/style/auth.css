@@ -26,22 +26,22 @@ body {
 h1 {
 	font-size: 2.2rem;
 	font-weight: bold;
-	color: #1a1a1a;
+	color: var(--text-dark);
 	margin-bottom: 10px;
 }
 
 .subtitle {
 	font-family: Arial, sans-serif;
 	font-size: 0.95rem;
-	color: #777;
+	color: var(--text-muted);
 	margin-bottom: 36px;
 }
 
 .card {
-	background: #fff;
+	background: var(--bg);
 	border-radius: 14px;
 	padding: 36px 32px;
-	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+	box-shadow: 0 2px 16px var(--shadow);
 	text-align: left;
 	margin-bottom: 24px;
 }
@@ -54,7 +54,7 @@ label {
 	font-family: Arial, sans-serif;
 	font-size: 0.9rem;
 	font-weight: 600;
-	color: #1a1a1a;
+	color: var(--text-dark);
 	display: block;
 	margin-bottom: 8px;
 }
@@ -73,7 +73,7 @@ label {
 .forgot {
 	font-family: Arial, sans-serif;
 	font-size: 0.85rem;
-	color: #2e8b50;
+	color: var(--green);
 	text-decoration: none;
 }
 
@@ -90,30 +90,30 @@ label {
 	left: 14px;
 	top: 50%;
 	transform: translateY(-50%);
-	color: #aaa;
+	color: var(--text-muted);
 	font-size: 1rem;
 }
 
 input {
 	width: 100%;
 	padding: 12px 14px 12px 40px;
-	border: 1.5px solid #ddd;
+	border: 1.5px solid var(--border);
 	border-radius: 8px;
 	font-family: Arial, sans-serif;
 	font-size: 0.9rem;
-	color: #333;
-	background: #fff;
+	color: var(--text-dark);
+	background: var(--bg);
 	outline: none;
 	transition: border-color 0.2s;
 }
 
 input[type="email"]:focus,
 input[type="password"]:focus {
-	border-color: #2e8b50;
+	border-color: var(--green);
 }
 
 input::placeholder {
-	color: #bbb;
+	color: var(--text-muted);
 }
 
 .input-wrap.has-toggle input {
@@ -133,13 +133,13 @@ input::placeholder {
 	border: none;
 	padding: 0;
 	margin: 0;
-	color: #aaa;
+	color: var(--text-muted);
 	cursor: pointer;
 }
 
 .input-wrap.has-toggle .toggle-password:hover {
 	background: none;
-	color: #aaa;
+	color: var(--text-dark);
 }
 
 .toggle-password .eye-off {
@@ -162,7 +162,7 @@ input::placeholder {
 }
 
 .terms-link {
-	color: #2e8b50;
+	color: var(--green);
 	font-weight: 600;
 	text-decoration: none;
 }
@@ -174,20 +174,20 @@ input::placeholder {
 .remember input[type="checkbox"] {
 	width: 16px;
 	height: 16px;
-	accent-color: #2e8b50;
+	accent-color: var(--green);
 	cursor: pointer;
 }
 
 .remember span {
 	font-family: Arial, sans-serif;
 	font-size: 0.88rem;
-	color: #444;
+	color: var(--text-muted);
 }
 
 button {
 	width: 100%;
 	padding: 14px;
-	background-color: #2e8b50;
+	background-color: var(--green);
 	color: #fff;
 	border: none;
 	border-radius: 8px;
@@ -199,18 +199,18 @@ button {
 }
 
 button:hover {
-	background-color: #256e40;
+	background-color: var(--hover);
 }
 
 .footer {
 	font-family: Arial, sans-serif;
 	font-size: 0.88rem;
-	color: #888;
+	color: var(--text-muted);
 	line-height: 1.8;
 }
 
 .footer a {
-	color: #2e8b50;
+	color: var(--green);
 	text-decoration: none;
 }
 

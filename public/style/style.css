@@ -20,6 +20,7 @@
 	--shadow: rgba(0, 0, 0, 0.12);
 	--track: #d9e6df;
 	--font: "Inter", sans-serif;
+	--hover: #007040;
 }
 
 html[data-theme="dark"] {
@@ -33,6 +34,7 @@ html[data-theme="dark"] {
 	--border: #2c332e;
 	--shadow: rgba(0, 0, 0, 0.55);
 	--track: #2c332e;
+	--hover: #007040;
 }
 
 html,
@@ -49,6 +51,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	width: 100%;
 }
 
 header {
