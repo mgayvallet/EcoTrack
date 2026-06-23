@@ -50,7 +50,6 @@ Plateforme web moderne permettant à des utilisateurs (citoyens, ONGs et institu
 
 ### Infrastructure
 - **Apache / Nginx** — Serveur web pour le déploiement
-- **Redis** *(optionnel)* — Cache et gestion des sessions à haute charge
 
 ---
 
@@ -68,7 +67,7 @@ npm -v        # NPM (si nécessaire)
 ### Clonage du Repository
 
 ```bash
-git clone https://github.com/your-org/ecotrack.git
+git clone https://github.com/mgayvallet/EcoTrack.git
 cd ecotrack
 ```
 
@@ -201,15 +200,9 @@ L'API utilise le protocole **JSON-RPC** pour toutes les communications client-se
 - Les mots de passe sont hashés via `password_hash()` (bcrypt)
 - Les sessions sont régénérées à chaque connexion pour prévenir la fixation de session
 
-### Bonnes Pratiques Git
-```bash
-# Ne jamais committer les fichiers sensibles
-echo "config/config.php" >> .gitignore
-echo ".env" >> .gitignore
-```
 
 ---
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
