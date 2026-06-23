@@ -50,7 +50,6 @@ Plateforme web moderne permettant à des utilisateurs (citoyens, ONGs et institu
 
 ### Infrastructure
 - **Apache / Nginx** — Serveur web pour le déploiement
-- **Redis** *(optionnel)* — Cache et gestion des sessions à haute charge
 
 ---
 
@@ -68,7 +67,7 @@ npm -v        # NPM (si nécessaire)
 ### Clonage du Repository
 
 ```bash
-git clone https://github.com/your-org/ecotrack.git
+git clone https://github.com/mgayvallet/EcoTrack.git
 cd ecotrack
 ```
 
