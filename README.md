@@ -200,12 +200,6 @@ L'API utilise le protocole **JSON-RPC** pour toutes les communications client-se
 - Les mots de passe sont hashés via `password_hash()` (bcrypt)
 - Les sessions sont régénérées à chaque connexion pour prévenir la fixation de session
 
-### Bonnes Pratiques Git
-```bash
-# Ne jamais committer les fichiers sensibles
-echo "config/config.php" >> .gitignore
-echo ".env" >> .gitignore
-```
 
 ---
 
