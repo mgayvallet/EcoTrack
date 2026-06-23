@@ -1,10 +1,10 @@
-# 🌍 EcoTrack - Plateforme de Suivi et Réduction de l'Empreinte Carbone
+# EcoTrack - Plateforme de Suivi et Réduction de l'Empreinte Carbone
 
 EcoTrack est une application web éducative et engageante conçue pour aider les citoyens à calculer, comprendre et réduire leur empreinte carbone. À travers un système de quiz interactif et de défis quotidiens, l'application transforme la démarche écologique en une expérience ludique et personnalisée.
 
 ---
 
-## 📋 Table des Matières
+## Table des Matières
 
 - [Présentation](#-présentation)
 - [Fonctionnalités](#-fonctionnalités)
@@ -20,7 +20,7 @@ EcoTrack est une application web éducative et engageante conçue pour aider les
 
 ---
 
-## 🎯 Présentation
+## Présentation
 
 EcoTrack permet aux utilisateurs de :
 
@@ -43,9 +43,9 @@ EcoTrack permet aux utilisateurs de :
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-### 🔢 Calculateur d'Empreinte Carbone
+### Calculateur d'Empreinte Carbone
 
 Le calculateur utilise des facteurs scientifiques pour estimer l'empreinte carbone totale de l'utilisateur :
 
@@ -59,7 +59,7 @@ Empreinte Totale = Transport + Logement + Alimentation + Achats Numériques
 - **Alimentation** : Bases selon régime (1000-3500 kg CO2/an) × facteur localisation
 - **Achats numériques** : Vêtements (25 kg/article), appareils (200 kg/appareil), streaming (20 kg/h)
 
-### 🎮 Système de Défis
+### Système de Défis
 
 **24 défis disponibles** répartis par catégorie et difficulté :
 
@@ -74,7 +74,7 @@ Empreinte Totale = Transport + Logement + Alimentation + Achats Numériques
 - **Rotation quotidienne** : Les défis changent chaque jour selon le jour de l'année pour une variété continue
 - **Priorisation** : Les catégories avec le plus haut impact sont proposées en priorité
 
-### 📊 Suivi et Statistiques
+### Suivi et Statistiques
 
 **Tableau de bord utilisateur :**
 - Nombre total de défis complétés
