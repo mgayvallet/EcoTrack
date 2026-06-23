@@ -9,10 +9,6 @@ class DatabaseTest extends TestCase
 {
     private static ?\PDO $pdo = null;
 
-    /**
-     * Tente d'établir la connexion avant les tests.
-     * Si MySQL n'est pas disponible, tous les tests de cette classe sont ignorés.
-     */
     public static function setUpBeforeClass(): void
     {
         try {
@@ -31,9 +27,6 @@ class DatabaseTest extends TestCase
         }
     }
 
-    /**
-     * Ignore le test si la base de données est inaccessible.
-     */
     private function skipIfNoConnection(): void
     {
         if (self::$pdo === null) {
@@ -43,9 +36,6 @@ class DatabaseTest extends TestCase
         }
     }
 
-    /**
-     * Vérifie que l'objet PDO est bien instancié.
-     */
     public function testConnexionEstEtablie(): void
     {
         $this->skipIfNoConnection();
@@ -53,9 +43,6 @@ class DatabaseTest extends TestCase
         $this->assertInstanceOf(\PDO::class, self::$pdo);
     }
 
-    /**
-     * Vérifie qu'une requête simple s'exécute sans erreur.
-     */
     public function testRequeteSimpleFonctionne(): void
     {
         $this->skipIfNoConnection();
@@ -68,9 +55,6 @@ class DatabaseTest extends TestCase
         $this->assertEquals(1, $row['valeur']);
     }
 
-    /**
-     * Vérifie que la table `users` existe dans la base de données.
-     */
     public function testTableUsersExiste(): void
     {
         $this->skipIfNoConnection();
@@ -81,9 +65,6 @@ class DatabaseTest extends TestCase
         $this->assertNotEmpty($result, "La table 'users' doit exister dans la base de données.");
     }
 
-    /**
-     * Vérifie que la table `defis` existe dans la base de données.
-     */
     public function testTableDefisExiste(): void
     {
         $this->skipIfNoConnection();

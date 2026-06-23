@@ -3,10 +3,8 @@
 use PHPUnit\Framework\TestCase;
 use MVC\Models\CarbonCalculator;
 
-/**
- * Tests unitaires de la classe CarbonCalculator.
- * Aucune base de données n'est requise : c'est de la logique pure.
- */
+ 
+//  Tests unitaires de la classe CarbonCalculator.
 class CarbonCalculatorTest extends TestCase
 {
     private CarbonCalculator $calculator;
@@ -16,9 +14,6 @@ class CarbonCalculatorTest extends TestCase
         $this->calculator = new CarbonCalculator();
     }
 
-    /**
-     * Vérifie que le résultat contient bien les clés attendues.
-     */
     public function testStructureDuResultat(): void
     {
         $result = $this->calculator->calculate([]);
@@ -31,9 +26,6 @@ class CarbonCalculatorTest extends TestCase
         $this->assertArrayHasKey('achats_numerique', $result['breakdown']);
     }
 
-    /**
-     * Vérifie que le total est bien la somme des postes du breakdown.
-     */
     public function testTotalEgaleSommeBreakdown(): void
     {
         $answers = [
@@ -58,10 +50,6 @@ class CarbonCalculatorTest extends TestCase
         $this->assertEquals($sommBreakdown, $result['total']);
     }
 
-    /**
-     * Vérifie qu'un profil sans aucune activité donne un total > 0
-     * (l'alimentation de base contribue toujours).
-     */
     public function testProfilVideAUnTotalPositif(): void
     {
         $result = $this->calculator->calculate([]);
@@ -69,9 +57,6 @@ class CarbonCalculatorTest extends TestCase
         $this->assertGreaterThan(0, $result['total']);
     }
 
-    /**
-     * Vérifie que le véhicule électrique produit moins de CO2 que le SUV.
-     */
     public function testVehiculeElectriqueProduisMoinsQueSuv(): void
     {
         $base = [
