@@ -2,19 +2,17 @@
 
 namespace MVC\Models;
 
+// Manager des défis : propose 3 défis/jour selon la catégorie la plus polluante
 class DefiManager
 {
     private $bdd;
 
-    /**
-     * Correspondance entre les postes de l'empreinte (calculateur)
-     * et les types de défi (table types_defi).
-     */
+    // Mappe entre les postes du calculateur et les types de défis
     private const POSTE_VERS_TYPE = [
-        'empreinte_transport'       => 3, // transport
-        'empreinte_logement'        => 1, // logement
-        'empreinte_alimentation'    => 2, // nourriture
-        'empreinte_achat_numerique' => 4, // numerique
+        'empreinte_transport'       => 3,
+        'empreinte_logement'        => 1,
+        'empreinte_alimentation'    => 2,
+        'empreinte_achat_numerique' => 4,
     ];
 
     public function __construct()
@@ -35,9 +33,6 @@ class DefiManager
         }
     }
 
-    /**
-     * Dernière empreinte enregistrée pour l'utilisateur (ou null).
-     */
     public function getLatestEmpreinte(int $userId): ?array
     {
         $query = $this->bdd->prepare('
@@ -52,9 +47,6 @@ class DefiManager
         return $row ?: null;
     }
 
-    /**
-     * Tous les défis actifs, groupés par type_defi_id, triés par CO2 décroissant.
-     */
     public function getActiveDefis(): array
     {
         $rows = $this->bdd->query('
@@ -74,32 +66,25 @@ class DefiManager
         return $grouped;
     }
 
-    /**
-     * Défis du jour : une sélection qui change chaque jour tout en ciblant
-     * en priorité les postes les plus émetteurs du dernier calcul.
-     *
-     * Pour chaque catégorie prioritaire, on choisit un défi en faisant
-     * tourner la difficulté selon le jour, ce qui donne de nouveaux défis
-     * chaque jour sans perdre le ciblage sur l'empreinte de l'utilisateur.
-     */
+    // Sélectionne 3 défis qui changent chaque jour avec rotation de difficulté
+    // Cible en priorité la catégorie la plus polluante
     public function getDailyDefis(int $userId, int $count = 3): array
     {
         $empreinte = $this->getLatestEmpreinte($userId);
         $allDefis  = $this->getActiveDefis();
 
-        // Ordonner les types de défi selon l'impact du poste correspondant.
+        // Ordonne les catégories par impact décroissant
         $impacts = [];
         foreach (self::POSTE_VERS_TYPE as $poste => $typeId) {
             $impacts[$typeId] = $empreinte ? (int) $empreinte[$poste] : 0;
         }
-        arsort($impacts); // poste le plus émetteur en premier
+        arsort($impacts);
         $ordreTypes = array_keys($impacts);
 
-        // Numéro du jour, base de la rotation quotidienne.
+        // Numéro du jour (jour de l'année) pour rotation quotidienne
         $jour = (int) (new \DateTime('today'))->format('z');
 
-        // Sans empreinte, on fait aussi tourner l'ordre des catégories
-        // pour que tous les postes soient proposés au fil des jours.
+        // Sans empreinte, on rotate les catégories
         if (!$empreinte) {
             $offset = $jour % max(1, count($ordreTypes));
             $ordreTypes = array_merge(
@@ -108,13 +93,13 @@ class DefiManager
             );
         }
 
+        // Sélectionne les défis avec rotation de difficulté
         $daily = [];
         foreach ($ordreTypes as $typeId) {
             $pool = $allDefis[$typeId] ?? [];
             if (!$pool) {
                 continue;
             }
-            // Rotation du défi choisi dans la catégorie selon le jour.
             $daily[] = $pool[$jour % count($pool)];
             if (count($daily) >= $count) {
                 break;
@@ -124,9 +109,7 @@ class DefiManager
         return $daily;
     }
 
-    /**
-     * Libellé du poste le plus émetteur, pour expliquer la recommandation.
-     */
+    // Retourne la catégorie la plus polluante
     public function getPosteFocus(int $userId): ?string
     {
         $empreinte = $this->getLatestEmpreinte($userId);
@@ -150,9 +133,7 @@ class DefiManager
         return array_key_first($postes);
     }
 
-    /**
-     * Identifiants des défis validés aujourd'hui par l'utilisateur.
-     */
+    // IDs des défis validés aujourd'hui
     public function getCompletedTodayIds(int $userId): array
     {
         $query = $this->bdd->prepare('
@@ -164,9 +145,7 @@ class DefiManager
         return array_map('intval', array_column($query->fetchAll(), 'defi_id'));
     }
 
-    /**
-     * Statistiques affichées en haut de la page (cartes).
-     */
+    // Récupère les statistiques : points, CO2, streak, défis complétés
     public function getStats(int $userId): array
     {
         $query = $this->bdd->prepare('
@@ -207,9 +186,7 @@ class DefiManager
         ];
     }
 
-    /**
-     * Valide un défi pour l'utilisateur (idempotent grâce à la clé unique).
-     */
+    // Marque le défi comme complété (INSERT IGNORE bloque les doublons du même jour)
     public function validateDefi(int $userId, int $defiId): void
     {
         $query = $this->bdd->prepare('
@@ -223,9 +200,7 @@ class DefiManager
         ]);
     }
 
-    /**
-     * Nombre de jours consécutifs (jusqu'à aujourd'hui ou hier) avec au moins un défi validé.
-     */
+    // Calcule les jours consécutifs avec au moins un défi complété (grace period de 1 jour)
     private function computeStreak(array $jours): int
     {
         if (!$jours) {
@@ -235,7 +210,6 @@ class DefiManager
         $set = array_flip($jours);
         $cursor = new \DateTime('today');
 
-        // La série reste valable si rien aujourd'hui mais quelque chose hier.
         if (!isset($set[$cursor->format('Y-m-d')])) {
             $cursor->modify('-1 day');
             if (!isset($set[$cursor->format('Y-m-d')])) {

@@ -7,6 +7,7 @@ use MVC\Models\CarbonCalculator;
 use MVC\Models\EmpreinteManager;
 use MVC\Models\DefiManager;
 
+// Contrôleur principal : calculateur, défis et pages publiques
 class HomeController
 {
     public function index(): void
@@ -32,6 +33,7 @@ class HomeController
         require VIEWS . 'layout/layout.php';
     }
 
+    // Affiche les 3 défis du jour (rotation quotidienne selon la catégorie la plus polluante)
     public function showChallengePage()
     {
         $defiManager = new DefiManager();
@@ -61,6 +63,7 @@ class HomeController
         require VIEWS . 'layout/layout.php';
     }
 
+    // Marque un défi complété (bloqué une fois par jour via INSERT IGNORE)
     public function validateChallenge($id)
     {
         $defiManager = new DefiManager();
@@ -70,6 +73,7 @@ class HomeController
         exit;
     }
 
+    // Calcule la trace carbone et la sauvegarde
     public function calculate()
     {
         $calculator = new CarbonCalculator();

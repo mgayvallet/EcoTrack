@@ -6,6 +6,7 @@ use MVC\Models\UserManager;
 use MVC\Models\User;
 use MVC\Validator;
 
+// Gestion de l'authentification : inscription, connexion, réinitialisation de mdp
 class UserController
 {
     private UserManager $user_manager;
@@ -25,6 +26,7 @@ class UserController
         require VIEWS . 'layout/layout-user.php';
     }
 
+    // Valide les identifiants et établit la session
     public function login()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -72,6 +74,7 @@ class UserController
         require VIEWS . 'layout/layout-user.php';
     }
 
+    // Crée un nouvel utilisateur et le connecte automatiquement
     public function register()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -128,6 +131,7 @@ class UserController
         require VIEWS . 'Auth/forgot-password.php';
     }
 
+    // Envoie un email avec un lien de réinitialisation (token de 1h)
     public function forgotPassword()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -160,6 +164,7 @@ class UserController
         exit;
     }
 
+    // Valide le token et affiche le formulaire de changement
     public function resetPasswordPage()
     {
         $title = 'Réinitialiser le mot de passe';
@@ -174,6 +179,7 @@ class UserController
         require VIEWS . 'Auth/reset-password.php';
     }
 
+    // Met à jour le mot de passe et invalide tous les autres tokens
     public function resetPassword()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

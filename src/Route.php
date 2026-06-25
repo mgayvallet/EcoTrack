@@ -1,6 +1,7 @@
 <?php
 namespace MVC;
 
+// Représentation d'une route : /path => Controller@method
 class Route {
 
     private $path;
@@ -14,6 +15,7 @@ class Route {
         $this->callable = $callable;
     }
 
+    // Marque la route comme protégée (authentification requise)
     public function auth(){
         $this->protected = true;
         return $this;
@@ -23,6 +25,7 @@ class Route {
         return $this->protected;
     }
 
+    // Teste si l'URL correspond à cette route (gère les paramètres comme :id)
     public function match($url){
         $url = trim($url, '/');
         $path = preg_replace('#:([\w]+)#', '([^/]+)', $this->path);
@@ -35,10 +38,11 @@ class Route {
         return true;
     }
 
+    // Exécute le contrôleur/méthode associés à cette route
     public function call() {
-         $rep = explode("@", $this->callable);
-         $controller = "MVC\\Controllers\\".$rep[0];
-         $controller = new $controller();
+        $rep = explode("@", $this->callable);
+        $controller = "MVC\\Controllers\\".$rep[0];
+        $controller = new $controller();
 
         return call_user_func_array([$controller, $rep[1]], $this->matches);
     }

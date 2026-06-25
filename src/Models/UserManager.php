@@ -5,6 +5,7 @@ namespace MVC\Models;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception as PHPMailerException;
 
+// Manager des utilisateurs : inscription, connexion, réinitialisation de mdp
 class UserManager
 {
     private $bdd;
@@ -128,12 +129,13 @@ class UserManager
         }
     }
 
+    // Envoie un token par email pour réinitialiser le mdp (1h d'expiration)
     public function sendPasswordReset($email)
     {
         try {
             $user = $this->getUserByEmail($email);
 
-            // On ne révèle pas si l'email existe ou non (anti-énumération)
+            // Anti-énumération: ne révèle pas si l'email existe
             if (!$user) {
                 return ['success' => true, 'message' => 'Si un compte existe avec cet email, un lien de réinitialisation vient d\'être envoyé.'];
             }
@@ -157,6 +159,7 @@ class UserManager
         }
     }
 
+    // Envoie l'email avec le lien via Gmail SMTP
     private function sendResetEmail($email, $token)
     {
         $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
@@ -190,12 +193,11 @@ class UserManager
 
             $mail->send();
         } catch (PHPMailerException $e) {
-            // L'erreur d'envoi ne doit pas révéler d'info à l'utilisateur,
-            // mais on la journalise pour le débogage.
             error_log('Erreur envoi email reset : ' . $mail->ErrorInfo);
         }
     }
 
+    // Récupère l'email associé à un token valide (expire après 1 heure)
     public function getEmailByToken($token)
     {
         try {
@@ -214,6 +216,7 @@ class UserManager
         }
     }
 
+    // Met à jour le mdp et invalide tous les autres tokens
     public function resetPassword($token, $password)
     {
         try {
@@ -234,7 +237,7 @@ class UserManager
                 ':email' => $email,
             ]);
 
-            // On invalide tous les tokens de cet email
+            // Invalide tous les tokens de cet email
             $del = $this->bdd->prepare('DELETE FROM password_resets WHERE email = :email');
             $del->execute([':email' => $email]);
 

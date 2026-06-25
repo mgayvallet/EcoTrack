@@ -2,9 +2,9 @@
 
 namespace MVC;
 
+// Dispatcher : mappe les URLs aux contrôleurs
 class Router
 {
-
     private $url;
     private $routes = [];
 
@@ -27,11 +27,13 @@ class Router
         return $route;
     }
 
+    // Trouve et exécute la route correspondante
     public function run()
     {
         if (!isset($this->routes[$_SERVER['REQUEST_METHOD']])) {
             throw new \Exception('REQUEST_METHOD does not exist');
         }
+
         foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
             if ($route->match($this->url)) {
                 if ($route->isProtected() && !isset($_SESSION['user_id'])) {
@@ -41,6 +43,7 @@ class Router
                 return $route->call();
             }
         }
+
         require VIEWS . '404.php';
         require VIEWS . 'layout/layout-user.php';
     }

@@ -2,11 +2,12 @@
 
 namespace MVC;
 
-/** Class Validator **/
+// Validateur de formulaires : teste les données selon des règles
 class Validator {
 
     private $data;
     private $errors = [];
+
     private $messages = [
         "required" => "Le champ est requis !",
         "min" => "Le champ doit contenir un minimum de %^% lettres !",
@@ -22,6 +23,7 @@ class Validator {
         "numeric" => "Le champ peut contenir que des chiffres !",
         "confirm" => "Le champs n'est pas conforme au confirm !"
     ];
+
     private $rules = [
         "required" => "#^.+$#",
         "min" => "#^.{ù,}$#",
