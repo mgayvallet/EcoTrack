@@ -1,1 +1,5 @@
+<<<<<<< Updated upstream
 {"version":2,"defects":[],"times":{"CarbonCalculatorTest::testStructureDuResultat":0.012,"CarbonCalculatorTest::testTotalEgaleSommeBreakdown":0.001,"CarbonCalculatorTest::testProfilVideAUnTotalPositif":0.001,"CarbonCalculatorTest::testVehiculeElectriqueProduisMoinsQueSuv":0,"CarbonCalculatorTest::testBreakdownContientDesEntiers":0.001,"DatabaseTest::testConnexionEstEtablie":0.001,"DatabaseTest::testRequeteSimpleFonctionne":0.001,"DatabaseTest::testTableUsersExiste":0.004,"DatabaseTest::testTableDefisExiste":0.002}}
+=======
+{"version":1,"defects":[],"times":{"CarbonCalculatorTest::testStructureDuResultat":0.004,"CarbonCalculatorTest::testTotalEgaleSommeBreakdown":0,"CarbonCalculatorTest::testProfilVideAUnTotalPositif":0,"CarbonCalculatorTest::testVehiculeElectriqueProduisMoinsQueSuv":0,"CarbonCalculatorTest::testBreakdownContientDesEntiers":0}}
+>>>>>>> Stashed changes

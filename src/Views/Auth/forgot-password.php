@@ -4,7 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Applique le thème sauvegardé avant le rendu pour éviter le flash
+        (function() {
+            try {
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <link rel="stylesheet" href="style/auth.css">
+    <link rel="stylesheet" href="style/style.css">
     <title><?= htmlspecialchars($title ?? 'EcoTrack') ?></title>
     <style>
         .error-message {
