@@ -112,7 +112,7 @@ L'application est ensuite accessible sur `http://localhost:8000`.
 Les tests unitaires et d'intégration sont écrits avec PHPUnit. Lancer la suite complète depuis la racine du projet :
 
 ```bash
-./vendor/bin/phpunit
+vendor\bin\phpunit test\ --testdox
 ```
 
 Les fichiers de test se trouvent dans le répertoire `test/`. Le fichier d'amorçage `test/bootstrap.php` gère l'autoloading et la configuration de l'environnement de test.
